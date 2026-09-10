@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ID Guard — Commissione Gare
 
 Piattaforma multi-tenant per caricare atti di gara (PDF/DOCX), istruire l’IA sul **formato** dell’output e salvare i documenti prodotti.
@@ -29,3 +30,8 @@ Senza `OPENAI_API_KEY` o `ANTHROPIC_API_KEY` l’output viene costruito dal moto
 ## Note
 
 Il progetto Supabase `tvatdtsecppqafjoxokz` non era accessibile dall’account MCP collegato. I dati restano in `data/` (locale, non versionato). Quando l’accesso sarà disponibile si potrà migrare Auth/Storage su quel progetto.
+=======
+# protocollogare
+
+Repository base.
+>>>>>>> origin/main
