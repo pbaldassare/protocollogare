@@ -7,6 +7,13 @@ Piattaforma multi-tenant per caricare atti di gara (PDF/DOCX), istruire l’IA s
 - Email: `paolo.baldassare@gmail.com`
 - Password: quella fornita in sede di setup (hash salvato nel seed, non in chiaro)
 
+## Cloudflare Pages
+
+Build command: `npm run build`  
+Output directory: `dist`
+
+Il passo `prepare-dist` crea `dist` dopo `next build` (Next.js da solo scrive in `.next`). In Pages imposta anche `DATABASE_URL`, `SESSION_SECRET` e `MOONSHOT_API_KEY`. Le API Node (`pg`, upload, Moonshot) restano pensate per un runtime Node; su Pages statico funziona la shell di login.
+
 ## Avvio
 
 ```bash
@@ -34,6 +41,7 @@ Postgres su `https://tvatdtsecppqafjoxokz.supabase.co`.
 # in .env.local
 DATABASE_URL=postgresql://postgres:[PASSWORD]@db.tvatdtsecppqafjoxokz.supabase.co:5432/postgres?sslmode=require
 npm run db:setup
+npm run db:reload-docs   # ricarica i PDF/DOCX originali sulla pratica ARPAL
 ```
 
 Le tabelle (`tenants`, `users`, `prompts`, `practices`, `documents`, `outputs`, `output_versions`) hanno RLS attivo e nessun grant a `anon`/`authenticated`: l’app parla col database solo lato server.
