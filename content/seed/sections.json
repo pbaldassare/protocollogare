@@ -1,0 +1,74 @@
+[
+  {
+    "id": "sintesi",
+    "title": "Sintesi direzionale",
+    "instruction": "Una pagina: esito complessivo, tre rischi maggiori, stima punteggio attuale e potenziale. Linguaggio manageriale asciutto.",
+    "required": true
+  },
+  {
+    "id": "fase0",
+    "title": "Fase 0 — Matrice della lex specialis",
+    "instruction": "Tabella A (matrice Griglia) e Tabella B (vincoli/esclusioni). Segnala documenti mancanti con ⚠ DA VERIFICARE.",
+    "required": true
+  },
+  {
+    "id": "fase1",
+    "title": "Fase 1 — Modello mentale della Commissione",
+    "instruction": "Cosa attira, cosa genera fiducia, cosa fa perdere credibilità, riferito alla gara concreta.",
+    "required": true
+  },
+  {
+    "id": "fase2",
+    "title": "Fase 2 — Audit di conformità formale",
+    "instruction": "Verbale di conformità: pagine, carattere, elementi economici, struttura, firma, segnaposto.",
+    "required": true
+  },
+  {
+    "id": "fase3",
+    "title": "Fase 3 — Rispondenza al Capitolato",
+    "instruction": "Matrice obblighi / copertura. Obblighi scoperti in evidenza. Non inventare articoli assenti.",
+    "required": true
+  },
+  {
+    "id": "fase4",
+    "title": "Fase 4 — Valutazione per criterio",
+    "instruction": "Punteggio simulato e motivazione da verbale per ogni criterio noto. Se manca la Griglia, fermati e segnalalo.",
+    "required": true
+  },
+  {
+    "id": "fase5",
+    "title": "Fase 5 — Registro errori",
+    "instruction": "Errori ordinati per gravità, con correzione proposta.",
+    "required": true
+  },
+  {
+    "id": "fase6",
+    "title": "Fase 6 — Test di personalizzazione",
+    "instruction": "Verifica se il testo è sostituibile con un altro ente. Segnala ARPA/ARPAL e toponimi incoerenti.",
+    "required": true
+  },
+  {
+    "id": "fase7",
+    "title": "Fase 7 — Quesiti alla Stazione Appaltante",
+    "instruction": "Quesiti pronti per l’invio, con piano B.",
+    "required": true
+  },
+  {
+    "id": "fase8",
+    "title": "Fase 8 — Avvocato del secondo classificato",
+    "instruction": "Attacco dell’offerta come farebbe il secondo classificato.",
+    "required": true
+  },
+  {
+    "id": "fase9",
+    "title": "Fase 9 — Piano di intervento",
+    "instruction": "Testi sostitutivi e stima punteggio finale. Segnaposto [●:] per dati aziendali mancanti.",
+    "required": true
+  },
+  {
+    "id": "checklist",
+    "title": "Checklist pre-deposito",
+    "instruction": "Caselle di spunta della checklist finale del Prompt Master.",
+    "required": true
+  }
+]

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ID Guard — Commissione Gare
 
 Piattaforma multi-tenant per caricare atti di gara (PDF/DOCX), istruire l’IA sul **formato** dell’output e salvare i documenti prodotti.
@@ -27,11 +26,14 @@ Apri [http://localhost:3000](http://localhost:3000), accedi e apri la pratica **
 
 Senza `OPENAI_API_KEY` o `ANTHROPIC_API_KEY` l’output viene costruito dal motore locale ID Guard, rispettando le sezioni del Prompt Master e senza inventare dati.
 
-## Note
+## Database
 
-Il progetto Supabase `tvatdtsecppqafjoxokz` non era accessibile dall’account MCP collegato. I dati restano in `data/` (locale, non versionato). Quando l’accesso sarà disponibile si potrà migrare Auth/Storage su quel progetto.
-=======
-# protocollogare
+Postgres su `https://tvatdtsecppqafjoxokz.supabase.co`.
 
-Repository base.
->>>>>>> origin/main
+```bash
+# in .env.local
+DATABASE_URL=postgresql://postgres:[PASSWORD]@db.tvatdtsecppqafjoxokz.supabase.co:5432/postgres?sslmode=require
+npm run db:setup
+```
+
+Le tabelle (`tenants`, `users`, `prompts`, `practices`, `documents`, `outputs`, `output_versions`) hanno RLS attivo e nessun grant a `anon`/`authenticated`: l’app parla col database solo lato server.

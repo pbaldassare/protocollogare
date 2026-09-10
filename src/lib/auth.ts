@@ -1,7 +1,7 @@
 import { compare } from "bcryptjs";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
-import { readDb } from "./store";
+import { findUserByEmail as findUserRow, getTenant } from "./store";
 import type { SessionUser } from "./types";
 
 const COOKIE = "idguard_session";
@@ -46,20 +46,18 @@ export async function getSession(): Promise<SessionUser | null> {
   }
 }
 
-export function findUserByEmail(email: string) {
-  const db = readDb();
-  return db.users.find((u) => u.email.toLowerCase() === email.toLowerCase()) ?? null;
+export async function findUserByEmail(email: string) {
+  return findUserRow(email);
 }
 
-export function toSessionUser(user: {
+export async function toSessionUser(user: {
   id: string;
   email: string;
   name: string;
   role: SessionUser["role"];
   tenantId: string;
-}): SessionUser {
-  const db = readDb();
-  const tenant = db.tenants.find((t) => t.id === user.tenantId);
+}): Promise<SessionUser> {
+  const tenant = await getTenant(user.tenantId);
   return {
     id: user.id,
     email: user.email,
