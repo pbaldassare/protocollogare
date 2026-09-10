@@ -77,7 +77,7 @@ export default function LoginPage() {
           </button>
         </form>
         <p className="mt-6 text-center text-[11px] text-[#6F8599]">
-          ID Guard · sessione cifrata · multi-tenant
+          Protocollo Gare · sessione cifrata · multi-tenant
         </p>
       </div>
     </div>

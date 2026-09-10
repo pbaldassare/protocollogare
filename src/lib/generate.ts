@@ -143,7 +143,7 @@ Produci ora l'OUTPUT completo nel formato richiesto, in italiano. Non inventare.
   if (llm?.text) return llm;
 
   return {
-    model: "idguard-local",
+      model: "protocollo-gare-local",
     text: localOutput(input, facts, corpus),
   };
 }
@@ -180,7 +180,7 @@ function localOutput(
   const lines: string[] = [];
   lines.push(`# OUTPUT — ${input.title}`);
   lines.push("");
-  lines.push(`**Motore:** ID Guard Commissione (locale, senza modello esterno)`);
+  lines.push(`**Motore:** Protocollo Gare (locale, senza modello esterno)`);
   lines.push(`**Prompt:** ${input.prompt.name}`);
   lines.push(`**Ente:** ${facts.ente || input.ente || "⚠ DA VERIFICARE"}`);
   lines.push(`**Riferimento:** ${facts.rdo || input.cig || "⚠ DA VERIFICARE"}`);

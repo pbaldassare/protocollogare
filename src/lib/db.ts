@@ -9,18 +9,18 @@ function connectionString() {
 }
 
 declare global {
-  var __idguardPool: Pool | undefined;
+  var __pgarePool: Pool | undefined;
 }
 
 export function getPool() {
-  if (!globalThis.__idguardPool) {
-    globalThis.__idguardPool = new Pool({
+  if (!globalThis.__pgarePool) {
+    globalThis.__pgarePool = new Pool({
       connectionString: connectionString().replace(/[?&]sslmode=[^&]+/, ""),
       ssl: { rejectUnauthorized: false },
       max: 5,
     });
   }
-  return globalThis.__idguardPool;
+  return globalThis.__pgarePool;
 }
 
 export async function query<T extends QueryResultRow = QueryResultRow>(

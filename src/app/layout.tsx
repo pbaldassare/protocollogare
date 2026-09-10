@@ -13,7 +13,7 @@ const display = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "ID Guard — Commissione Gare",
+  title: "Protocollo Gare",
   description: "Piattaforma multi-tenant per istruzioni IA, documenti di gara e output.",
 };
 

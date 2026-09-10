@@ -25,11 +25,11 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       </svg>
       {!compact && (
         <div className="leading-tight">
-          <div className="font-[family-name:var(--font-display)] text-[15px] tracking-[0.22em] text-[#F3E6C0]">
-            ID GUARD
+          <div className="font-[family-name:var(--font-display)] text-[15px] tracking-[0.12em] text-[#F3E6C0]">
+            PROTOCOLLO GARE
           </div>
           <div className="text-[10px] uppercase tracking-[0.18em] text-[#8BA3B8]">
-            Commissione Gare
+            Piattaforma documentale
           </div>
         </div>
       )}

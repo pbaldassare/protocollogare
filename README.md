@@ -1,4 +1,4 @@
-# ID Guard — Commissione Gare
+# Protocollo Gare
 
 Piattaforma multi-tenant per caricare atti di gara (PDF/DOCX), istruire l’IA sul **formato** dell’output e salvare i documenti prodotti.
 
@@ -31,7 +31,7 @@ Apri [http://localhost:3000](http://localhost:3000), accedi e apri la pratica **
 4. **Istruzioni IA**: Prompt Master + sezioni di formato modificabili
 5. **Genera Output** e **Salva** versioni (bozza / definitivo)
 
-Con `MOONSHOT_API_KEY` l’Output è redatto da Kimi/Moonshot (`kimi-k2.6` su `https://api.moonshot.ai/v1`). Senza chiave si usa il motore locale ID Guard.
+Con `MOONSHOT_API_KEY` l’Output è redatto da Kimi/Moonshot (`kimi-k2.6` su `https://api.moonshot.ai/v1`). Senza chiave si usa il motore locale di Protocollo Gare.
 
 ## Database
 

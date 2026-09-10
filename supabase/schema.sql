@@ -1,4 +1,4 @@
--- ID Guard / Commissione Gare
+-- Protocollo Gare
 -- Multi-tenant schema. RLS on; Data API stays closed (no anon/authenticated grants).
 
 create extension if not exists pgcrypto;

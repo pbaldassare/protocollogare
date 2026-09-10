@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const secret = new TextEncoder().encode(
-  process.env.SESSION_SECRET || "idguard-protocollogare-dev-secret-change-me",
+  process.env.SESSION_SECRET || "protocollo-gare-dev-secret-change-me",
 );
 
 const publicPaths = ["/login", "/api/auth/login"];
@@ -18,7 +18,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
   const isPublic = publicPaths.some((p) => pathname === p || pathname.startsWith(p + "/"));
-  const token = req.cookies.get("idguard_session")?.value;
+  const token = req.cookies.get("pgare_session")?.value;
   let ok = false;
   if (token) {
     try {
