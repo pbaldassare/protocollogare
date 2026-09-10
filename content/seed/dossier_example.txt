@@ -1,0 +1,624 @@
+DOSSIER DI INTELLIGENCE
+ARPAL PUGLIA
+Agenzia Regionale per le Politiche Attive del Lavoro
+Analisi strategica dell’Ente ai fini della predisposizione dell’offerta tecnica
+Prompt Master 1.0 – Esecuzione • Settembre 2026 • Fonti ufficiali citate in calce a ciascuna sezione
+Documento di lavoro interno – riservato
+
+EXECUTIVE SUMMARY
+ARPAL Puglia è l’ente strumentale della Regione Puglia per le politiche attive del lavoro, istituito con L.R. 29 giugno 2018, n. 29 (norme sui servizi per le politiche attive del lavoro e sul contrasto al lavoro nero e al caporalato). Dal 1° luglio 2018 la Regione è subentrata alle Province nella gestione dei Centri per l’Impiego, affidandola all’Agenzia. Oggi ARPAL governa una rete di 44 CPI articolata su quattro ambiti territoriali (Bari, Foggia-BAT, Lecce, Taranto-Brindisi), con oltre 500 dipendenti, sede legale a Bari (Via Niceforo 1-3) e sede operativa a Modugno (Via delle Magnolie 6).
+Tre elementi definiscono il "carattere" dell’Ente e devono orientare qualunque offerta tecnica:
+1) Un ente giovane, cresciuto in fretta e sotto osservazione. ARPAL ha attraversato tra il 2020 e il 2023 la crisi reputazionale più grave tra le agenzie regionali pugliesi (caso "parentopoli", decadenza per legge del DG Cassano nel 2022, commissariamento, inchieste della Procura di Bari, della Corte dei Conti e attenzione ANAC sui concorsi). La governance attuale (CdA + Direttore, ex L.R. 23/2022) nasce esattamente da quella crisi: legalità, trasparenza e tracciabilità delle procedure sono oggi ipersensibilità organizzative, non formalità.
+2) Un ente sotto pressione di risultato PNRR/GOL. ARPAL è il braccio attuativo regionale del Programma GOL (PNRR M5C1) e del Piano straordinario di potenziamento dei CPI: la Puglia ha superato i target assegnati (dato luglio 2026) e l’Agenzia comunica sistematicamente i risultati. KPI quantitativi, monitoraggio e rendicontazione sono il linguaggio interno dominante.
+3) Un ente in transizione politico-amministrativa. Con l’insediamento della Giunta Decaro (gennaio 2026, assessore al Lavoro: Eugenio Di Sciascio, tecnico) è stato avviato a febbraio 2026 l’avviso pubblico per il rinnovo di Presidente e CdA. Chi partecipa a una gara ARPAL nel 2026-2027 deve considerare possibili avvicendamenti ai vertici e interlocutori tecnici stabili (dirigenti UO) come riferimento effettivo.
+Per una gara di servizi (incluso il brokeraggio assicurativo), il centro di gravità procedurale è l’U.O. Patrimonio e Attività Negoziali, competente per tutte le attività negoziali e gli acquisti dell’Agenzia. L’offerta vincente parlerà il linguaggio dell’Ente: compliance rigorosa, KPI misurabili, supporto alla rendicontazione PNRR/FSE+, protezione del patrimonio informativo (dati personali di centinaia di migliaia di utenti dei CPI), tutela del personale distribuito su 44+ sedi e presidio della responsabilità amministrativo-contabile di dirigenti e funzionari in un contesto ad alta esposizione mediatica e giudiziaria.
+
+PARTE 1 – IDENTITÀ DELL’ENTE
+Storia ed evoluzione
+2018 – L.R. 29 giugno 2018, n. 29: istituzione dell’Agenzia quale ente tecnico-operativo e strumentale della Regione (art. 7); dal 1° luglio 2018 la Regione subentra alle Province nella gestione delle funzioni del mercato del lavoro e dei CPI.
+2019 – Avvio operativo (Determinazione del Commissario Straordinario n. 1 del 15/02/2019: primo assetto organizzativo); D.M. Lavoro n. 74 del 28/06/2019: Piano straordinario di potenziamento dei CPI, che finanzia il massiccio reclutamento.
+2020-2022 – Fase espansiva sotto la direzione Cassano; crisi reputazionale ("parentopoli": assunzioni riconducibili all’area politica del DG); ottobre 2022: il Consiglio regionale approva la legge che ne dispone la decadenza; commissariamento.
+2022 – L.R. 2 novembre 2022, n. 23: riforma della governance (decadenza immediata del DG ex art. 9 L.R. 29/2018; nuovo modello Consiglio di Amministrazione + Direttore).
+2023 – DGR n. 862 del 19/06/2023: nomina del CdA (Presidente Beniamino Di Cagno; consiglieri Serena Triggiani e Donato Liturri); insediamento luglio 2023.
+2024 – DGR n. 342 del 21/03/2024: nomina del Direttore Gianluca Budano (immissione in ruolo con A.D. n. 346 del 17/04/2024); DGR n. 1183 del 07/08/2024: subentro in CdA dell’Avv. Cinzia Capano.
+2026 – Insediamento Giunta Decaro (gennaio); avviso pubblico per il rinnovo di Presidente e componenti del CdA (Det. Direttore Dipartimento n. 2 del 23/02/2026, BURP n. 16 suppl. del 26/02/2026).
+Missione e funzioni
+Missione: garantire l’erogazione dei livelli essenziali delle prestazioni (LEP) dei servizi per l’impiego (D.Lgs. 150/2015), promuovere l’incontro domanda-offerta di lavoro, attuare le politiche attive regionali e contrastare lavoro nero e caporalato, con approccio universalistico, preventivo e personalizzato. Funzioni chiave (art. 6 L.R. 29/2018): gestione dei CPI e del collocamento mirato; interventi per lavoratori stranieri, persone con disabilità e fragilità (in integrazione con servizi sociali comunali e dipartimenti di salute mentale delle ASL); promozione dell’apprendistato; supporto all’osservatorio del mercato del lavoro; monitoraggio e valutazione delle prestazioni dei servizi; gestione dell’accreditamento regionale dei soggetti pubblici e privati; supporto alla programmazione dell’offerta formativa.
+Mappa delle relazioni istituzionali (mappa concettuale testuale)
+ASSE DI GOVERNO – Regione Puglia: Giunta (indirizzo, controllo, vigilanza, approvazione bilanci e regolamenti; oggi Presidente Antonio Decaro), Assessorato Sviluppo Economico e Lavoro (Eugenio Di Sciascio, delega alle politiche attive), Dipartimento Politiche del Lavoro, Istruzione e Formazione.
+ASSE NAZIONALE – Ministero del Lavoro e delle Politiche Sociali (LEP, GOL, Piano potenziamento CPI); Sviluppo Lavoro Italia S.p.A. (già ANPAL Servizi) per assistenza tecnica; INPS (ADI/SFL, condizionalità, incentivi); INAPP; Ispettorato Nazionale del Lavoro (contrasto irregolarità).
+ASSE TERRITORIALE – Comuni e ambiti sociali (inclusione), ASL (L. 68/99, salute mentale), Prefetture (flussi, caporalato), scuole/ITS Academy/università, camere di commercio e associazioni datoriali.
+ASSE DI MERCATO – Soggetti accreditati ai servizi per il lavoro, enti di formazione, APL private (rete pubblico-privato GOL), imprese utenti dei servizi di preselezione e recruiting.
+ASSE ORIZZONTALE – Agenzie regionali per il lavoro delle altre Regioni (coordinamento tecnico e confronto su GOL, es. seminari "Oltre GOL" cui partecipa il Direttore Budano).
+PARTE 2 – NORMATIVA
+Fonte
+Contenuto rilevante
+Impatto su ARPAL e sugli operatori economici
+L.R. 29/2018
+Istituzione, funzioni, organi, personale, contrasto a lavoro nero/caporalato
+Perimetro delle competenze; autonomia organizzativa, finanziaria, patrimoniale e contabile; vigilanza regionale
+L.R. 23/2022
+Riforma governance: CdA + Direttore; decadenza del precedente DG
+Decisioni bicefale (CdA delibera su proposta del Direttore); maggiore formalizzazione e controllo regionale
+D.Lgs. 150/2015
+LEP e standard dei servizi per l’impiego
+Obblighi di servizio misurabili: i fornitori devono agganciarsi a standard e indicatori LEP
+L. 68/99
+Collocamento mirato disabili e categorie protette
+Uffici dedicati per provincia; monitoraggio pubblicato da ARPAL
+D.L. 48/2023
+ADI e SFL: presa in carico e condizionalità via CPI/SIISL
+Volumi di utenza e interoperabilità con piattaforme nazionali
+PNRR M5C1 / GOL
+Target quantitativi di presa in carico e formazione
+Pressione di risultato e rendicontazione; premialità per chi supporta i target
+D.M. 74/2019
+Piano straordinario potenziamento CPI
+Finanzia assunzioni e sedi; vincoli di destinazione dei fondi
+D.Lgs. 36/2023
+Codice dei contratti pubblici
+Regole di gara: digitalizzazione, RUP, OEPV; qualificazione della SA
+Regolamenti interni
+Organizzazione, personale, attività negoziali (adottati dal CdA, approvati dalla Giunta)
+Iter interni degli acquisti; competenza U.O. Patrimonio e Attività Negoziali
+
+[DA VERIFICARE] Testi vigenti e consolidati di Statuto e Regolamenti interni (organizzativo, personale, acquisti): scaricare da Amministrazione Trasparente > Disposizioni generali (nuovo portale attivo dal 29/01/2025; atti anteriori nella versione precedente del portale).
+Criticità normative generate: stratificazione L.R. 29/2018 + L.R. 23/2022 con doppio livello decisionale (proposta del Direttore, adozione del CdA, approvazione della Giunta) che allunga i tempi degli atti fondamentali — come dimostra il bilancio 2025 rimasto a lungo "in corso di approvazione" regionale; dipendenza da fondi vincolati (GOL, Piano potenziamento) che irrigidisce la spesa.
+PARTE 3 – GOVERNANCE
+Organi (modello L.R. 23/2022)
+Consiglio di Amministrazione: adotta, su proposta del Direttore, bilanci, regolamenti, Piano della performance; trasmette gli atti alla Giunta per approvazione; propone la valutazione del Direttore. Composizione uscente: Presidente Beniamino Di Cagno, consiglieri Donato Liturri e Avv. Cinzia Capano (subentrata a Serena Triggiani, DGR 1183/2024). Compenso: € 10.000 per componente (DGR 862/2023). Rinnovo in corso: avviso pubblico BURP n. 16 suppl. del 26/02/2026.
+Presidente CdA: rappresenta l’Agenzia nei tavoli istituzionali, garantisce la coerenza con gli indirizzi della Giunta, relaziona annualmente alla Giunta con il Direttore, può attribuire deleghe speciali al Direttore.
+Direttore (Gianluca Budano, DGR 342/2024): organo gestionale: coordina e supervisiona le UO, organizza risorse umane/finanziarie/strumentali, assegna obiettivi di gestione, predispone Piano della performance e proposta di bilancio, attua le direttive del Presidente (art. 9 c. 8 L.R. 29/2018 come mod. da L.R. 23/2022).
+Regione Puglia: approva bilanci, regolamenti e dotazione organica; la Giunta esercita controllo e verifica anche sulle misure anticorruzione e trasparenza (fonte: PIAO ARPAL).
+Chi decide davvero (lettura operativa)
+Le decisioni di spesa e gli atti di gara sono formalizzati con determinazioni dirigenziali: il perno operativo è il dirigente dell’U.O. Patrimonio e Attività Negoziali, cui compete "provvedere a tutte le attività negoziali e all’acquisto di tutti i beni e servizi necessari per il funzionamento dell’Agenzia".
+Il Direttore è il decisore gestionale unico di riferimento (assegna risorse alle UO: cfr. nota prot. 151165 del 07/11/2024 di assegnazione delle risorse finanziarie).
+Il CdA è organo di adozione formale; la Giunta regionale è il collo di bottiglia approvativo.
+Influenzatori: Assessorato al Lavoro e Dipartimento regionale (indirizzo, convenzioni, GOL); OO.SS. (forte peso su temi del personale); stampa locale (Gazzetta del Mezzogiorno segue ARPAL con continuità investigativa).
+U.O. Affari Generali – Personale e Formazione interna – Contenzioso: dirigente dott.ssa Enrica Griesi (D.D.G. 104/2022); rilevante per gare con impatti su personale e contenzioso.
+DPO: Ing. Angelantonio Cafagno (Det. 593/2021).
+[DA VERIFICARE] Nominativo del dirigente pro tempore dell’U.O. Patrimonio e Attività Negoziali e del RUP tipico delle gare di servizi: estrarre dalle determinazioni recenti in Albo Pretorio (albo-arpal.regione.puglia.it). Nel dicembre 2025 risultava bandito un concorso per n. 1 dirigente da assegnare a una U.O.: verificare esito.
+PARTE 4 – ORGANIZZAZIONE OPERATIVA
+Assetto centrale (fonte: arpal.regione.puglia.it > Organizzazione): Direzione Generale; Coordinamento dei Servizi per l’Impiego articolato nei quattro ambiti territoriali; Coordinamento di Staff; U.O. Patrimonio e Attività Negoziali; U.O. Affari Generali – Personale e Formazione interna – Contenzioso; strutture ICT, bilancio, sicurezza e privacy.
+Ambito territoriale
+Coordinatore U.O. (fonte sito)
+Note
+Bari
+Dott.ssa Valentina Elia
+Coordinamento CPI area metropolitana
+Foggia-BAT
+Dott.ssa Valentina Elia (ad interim, da verificare)
+Territorio ad alta incidenza lavoro agricolo/caporalato
+Lecce
+Dott. Luigi Mazzei
+Rete CPI salentina, sportelli sperimentali (es. Boncuri-Nardò)
+Taranto-Brindisi
+Dott.ssa Marta Basile
+Basile è anche Presidente del CUG
+
+Rete territoriale: 44 Centri per l’Impiego (elenco sedi ufficiale con indirizzi e contatti pubblicato dall’Agenzia), più Uffici di Collocamento Mirato su base provinciale. Personale: oltre 500 dipendenti (fonte: Portale CUG – Dipartimento Funzione Pubblica), in crescita per effetto del Piano di potenziamento e dei concorsi (88 posti; programmato maxi-reclutamento; assunzioni per categorie protette: 40 posti nel 2025).
+Implicazione assicurativa diretta: patrimonio immobiliare diffuso (44+ sedi tra proprietà e locazioni), parco utenti elevatissimo (rischio RCT/O), personale numeroso e giovane in ruoli a contatto con il pubblico, dirigenti e PO esposti a responsabilità amministrativo-contabile in un ente sotto scrutinio di Corte dei Conti e Procura.
+PARTE 5 – ANALISI DEL PIAO
+PIAO 2023-2025: adottato il 04/04/2023; integra valore pubblico, performance, rischi corruttivi, fabbisogni di personale; dichiara sinergia con PNRR e programmi UE.
+PIAO 2025-2027: adottato con Deliberazione CdA n. 2 del 31/01/2025; successivo aggiornamento delle sottosezioni 2.3 (Rischi corruttivi e Trasparenza) e 3.3 (Piano Triennale dei Fabbisogni).
+Obiettivi ricorrenti: attuazione target GOL; completamento Piano potenziamento CPI (personale e sedi); digitalizzazione dei servizi e formazione digitale dell’utenza; parità di genere (bilancio di genere sollecitato dal CUG); semplificazione procedure; trasparenza e prevenzione della corruzione.
+Come un’offerta tecnica può agganciarsi al PIAO: (i) offrire reportistica e dashboard che alimentino direttamente gli indicatori PIAO; (ii) dichiarare SLA coerenti con i tempi delle sottosezioni performance; (iii) prevedere formazione accreditata al personale (il PIAO valorizza la formazione interna); (iv) includere misure di supporto alla sezione anticorruzione (tracciabilità, conflitti di interesse, audit trail); (v) contribuire ai target di digitalizzazione (portali, firma digitale, gestione documentale sinistri/pratiche).
+[DA VERIFICARE] Testo integrale del PIAO 2025-2027 con indicatori numerici e cronoprogramma: scaricare da Amministrazione Trasparente o dal Portale PIAO del Dipartimento Funzione Pubblica (piao.dfp.gov.it) e mappare ogni obiettivo su una riga d’offerta.
+PARTE 6 – PERFORMANCE
+Il Piano della performance è predisposto dal Direttore e adottato dal CdA (con Relazione finale annuale).
+Risultato certificato più rilevante: superamento dei target GOL/PNRR assegnati alla Puglia (comunicazioni ufficiali luglio 2025 e luglio 2026; dichiarazioni dell’assessore Di Sciascio che accreditano la filiera Dipartimento-ARPAL-CPI-APL-enti di formazione).
+KPI dominanti: prese in carico GOL per cluster, percorsi di formazione avviati/conclusi, inserimenti occupazionali, tempi di erogazione dei LEP, offerte di lavoro intermediate (report settimanali per ambito), collocamento mirato (primo monitoraggio organico L. 68/99 pubblicato nel 2024).
+Gap e aree di miglioramento desumibili dalle fonti: disomogeneità territoriale tra ambiti (offerta di lavoro concentrata su edilizia/servizi/ICT in area Bari-Foggia-BAT); mismatch di competenze e stagionalità del mercato pugliese; necessità di consolidare il personale neoassunto (turnover verso altre PA tramite comandi e concorsi esterni); maturità ancora parziale dei processi interni (bilanci approvati con ritardo).
+PARTE 7 – PIANO ANTICORRUZIONE
+La sezione 2.3 del PIAO (Rischi corruttivi e Trasparenza) è il PTPCT dell’Agenzia; obiettivo dichiarato: contrastare corruzione e maladministration; la Giunta regionale svolge funzione di controllo su tutte le misure generali di gestione del rischio corruttivo e di trasparenza (fonte: PIAO ARPAL).
+Contesto che rende l’anticorruzione centrale: vicenda concorsi 2022 (indagine ANAC sul concorso dirigenti; anomalie nel concorso assistenti amministrativi documentate dalla stampa), inchiesta della Procura di Bari su assunzioni e nomina del DG, indagine della Corte dei Conti sulle consulenze (2025).
+Misure attese/tipiche: rotazione, whistleblowing, controlli su conflitti di interesse dei commissari, tracciamento delle procedure selettive e di gara.
+Impatto sulle gare: massima formalizzazione; commissioni scelte con cautela; ogni elemento dell’offerta che rafforza tracciabilità, auditabilità e prevenzione dei conflitti di interesse (es. dichiarazioni ex art. 94-98 D.Lgs. 36/2023 gestite proattivamente, protocolli di legalità, clausole anticorruzione) sarà percepito come allineato alla sensibilità dell’Ente. Evitare qualunque approccio relazionale informale: l’organizzazione è vaccinata contro le scorciatoie.
+PARTE 8 – AMMINISTRAZIONE TRASPARENTE
+Portale AT: albo-arpal.regione.puglia.it (nuova versione attiva dal 29/01/2025; gli atti anteriori restano nella versione precedente — attenzione: la ricerca storica richiede entrambi i portali).
+Sezioni operative già riscontrate: Albo Pretorio con determinazioni (es. R.G. n. 73 del 27/01/2025 su attività negoziali; R.G. n. 1716 dell’11/12/2025), delibere CdA, bandi di gara e concorsi, elenco avvocati per patrocinio e consulenza (avviso di aggiornamento 04/09/2026).
+Anomalia segnalata dalla stampa (2025): indagine Corte dei Conti su presunta mancata pubblicazione di un contratto di consulenza legale — conferma che la completezza delle pubblicazioni è un punto sensibile.
+[DA VERIFICARE] Estrazione sistematica da AT: bilanci (ultimi 5 esercizi), contratti e affidamenti (art. 37 D.Lgs. 33/2013 / scheda ANAC), incarichi e consulenze, dati sui pagamenti e indicatore di tempestività. Da fare su entrambi i portali (pre e post 29/01/2025).
+PARTE 9 – CARTA DEI SERVIZI
+I servizi ARPAL seguono i LEP ex D.Lgs. 150/2015. Quadro dei servizi (fonti: sito istituzionale e materiale ufficiale CPI):
+Servizio
+Destinatari
+Standard/SLA di riferimento
+Rischi
+Miglioramenti possibili
+Accoglienza e DID/patto di servizio
+Disoccupati, percettori ADI/SFL
+Tempi LEP di presa in carico; condizionalità
+Code, disomogeneità tra CPI
+Prenotazione digitale, triage
+Orientamento di base e specialistico
+Utenti CPI, giovani, NEET
+Colloqui entro termini GOL per cluster
+Carichi per operatore
+Strumenti di assessment digitali
+Incontro domanda-offerta
+Persone e imprese
+Report settimanali offerte; recruiting day
+Mismatch competenze
+Matching assistito, preselezione
+Collocamento mirato L. 68/99
+Persone con disabilità, cat. protette
+Monitoraggio dedicato pubblicato
+Complessità convenzioni datoriali
+Accompagnamento post-inserimento
+Autoimpiego e tutoraggio
+Aspiranti autonomi
+Assistenza avvio attività
+Sopravvivenza iniziative
+Reti con incubatori/CCIAA
+Apprendistato e tirocini
+Giovani e imprese
+Promozione diffusione istituto (L.R. 29/2018)
+Adempimenti datoriali
+Sportelli dedicati imprese
+EURES / mobilità
+Lavoratori mobili, stranieri
+Bacheche multilingue (sperimentazione Nardò)
+Accessibilità linguistica
+Mediazione culturale strutturata
+Formazione digitale utenza
+Cittadini a bassa alfabetizzazione digitale
+Corsi SPID/strumenti base
+Divario digitale
+Partnership territoriali
+
+[DA VERIFICARE] Carta dei Servizi formalmente adottata (documento unico) e relativi SLA numerici: verificare pubblicazione in AT > Servizi erogati; in difetto, gli standard di riferimento restano i LEP nazionali e i target GOL.
+PARTE 10 – SISTEMI INFORMATIVI
+Portale istituzionale (arpal.regione.puglia.it) con news, opportunità, report mercato del lavoro e open data tematici.
+Sistema regionale "Lavoro per Te" / Sintesi Puglia (sintesi.regione.puglia.it) per DID, candidature, comunicazioni obbligatorie delle imprese.
+Interoperabilità con piattaforme nazionali: SIISL (ADI/SFL) e sistemi già MyANPAL per GOL; accesso servizi tramite SPID.
+Portale dei servizi/pubblicità legale su piattaforme di mercato (soluzionipa.it; albo pretorio su suite jcitygov/Halley): indica ecosistema ICT a componenti esterne multiple.
+Canali social e "bacheche virtuali" per ambito (sperimentazioni Lecce): comunicazione digitale decentrata.
+Formazione digitale all’utenza come servizio strutturale.
+Valutazione di maturità digitale: MEDIA. Front-end e comunicazione avanzati; interoperabilità nazionale imposta dalle riforme; ma back-office frammentato su fornitori diversi e revisione del portale AT solo a inizio 2025. Un’offerta che includa strumenti digitali chiavi-in-mano (portale sinistri, dashboard, reportistica automatica, conservazione a norma) copre un bisogno reale senza richiedere integrazioni complesse.
+PARTE 11 – CERTIFICAZIONI E QUALITÀ
+Dalle fonti pubbliche consultate non emergono certificazioni ISO possedute dall’Agenzia (a differenza di enti tecnici come le ARPA ambientali, per i quali l’accreditamento 17025 è strutturale). Il sistema qualità di ARPAL coincide di fatto con: LEP/standard nazionali dei servizi per l’impiego, sistema regionale di accreditamento dei soggetti privati (gestito dalla stessa ARPAL), monitoraggi GOL.
+[DA VERIFICARE] Eventuali certificazioni ISO 9001/27001/45001 o percorsi in atto: verificare su AT e nei documenti di gara recenti. Se assenti, valorizzare in offerta le certificazioni del concorrente (9001, 27001, parità di genere UNI/PdR 125:2022 — quest’ultima particolarmente coerente con la sensibilità CUG/bilancio di genere dell’Ente).
+PARTE 12 – BILANCI
+Bilancio previsionale 2025 e pluriennale 2025/2027: adottato con Deliberazione CdA n. 31 del 31/10/2024; risultava ancora "in corso di approvazione" regionale nei mesi successivi.
+Tre aggiornamenti nel solo 2025 (Delibere CdA n. 5 del 24/02/2025, n. 11 del 28/04/2025, n. 23 del 03/07/2025): finanza dinamica, trascinata dai fondi vincolati.
+Canali di finanziamento: trasferimenti regionali di funzionamento; Piano straordinario potenziamento CPI (fondi ministeriali); PNRR-GOL; FSE+; progetti europei dedicati (sezione "Progetti Europei" sul sito).
+Segnale gestionale: proteste per ritardi retributivi nel 2022 (stampa) — criticità di cassa/processi in fase espansiva, da ritenersi in via di superamento ma indicativa della pressione amministrativa.
+[DA VERIFICARE] Serie storica 2021-2025 di entrate/uscite/investimenti con importi: estrarre i bilanci da AT (entrambe le versioni del portale) e da BDAP; solo dopo sarà possibile costruire i grafici richiesti senza stimare. Nessun importo viene qui inventato.
+PARTE 13 – GARE (ultimi 5 anni)
+Stazione appaltante operante tramite U.O. Patrimonio e Attività Negoziali; piattaforma regionale di riferimento: EmPULIA (oltre a MEPA per sottosoglia).
+Tipologie ricorrenti desumibili dalle fonti: servizi ICT e piattaforme (portali, albo, gestionali), servizi di supporto/assistenza tecnica GOL, somministrazione e servizi HR (fase 2020-22: ATI enti di formazione + interinale per 500 unità a chiamata diretta — poi al centro delle polemiche), logistica e sedi CPI (locazioni, allestimenti), incarichi legali tramite elenco avvocati.
+Modello decisionale osservabile: preferenza per procedure tracciate e formalizzate (lezione appresa dal 2022); determinazioni pubblicate con regolarità in albo; elenchi aperti per incarichi fiduciari (avvocati) in luogo di affidamenti diretti opachi.
+[DA VERIFICARE] Censimento puntuale gare 2021-2026 (oggetto, importo, aggiudicatario, ribasso, criterio, ricorsi): estrarre da EmPULIA, ANAC-BDNCP (CIG per CF stazione appaltante) e AT sezione bandi. In particolare: verificare se esiste o è mai esistita una gara per brokeraggio assicurativo ARPAL e quali polizze sono attive (RCT/O, All Risks, RC patrimoniale, infortuni, RCA/kasko dipendenti in missione, tutela legale): dalle ricerche web non risulta un broker incumbent — se confermato, la gara si configurerebbe come primo affidamento, scenario competitivo molto favorevole.
+PARTE 14 – FORNITORI
+Categorie ricorrenti: piattaforme e-government (suite albo/trasparenza tipo Halley/jcitygov; portale servizi su soluzionipa.it), società di selezione concorsuale (es. CS Selezioni per gli 88 posti), società di somministrazione e enti di formazione (fase potenziamento), avvocati da elenco aperto, fornitori di sedi e facility per 44 CPI.
+Rotazione: la vicenda 2022 (ATI formazione+interinale) ha reso l’Ente prudente su affidamenti ripetuti a operatori "di area": aspettarsi applicazione rigorosa del principio di rotazione ex D.Lgs. 36/2023.
+[DA VERIFICARE] Mappa nominativa fornitori con durate e importi: da AT sezione "Contratti/Provvedimenti" e dataset ANAC (L.190/2012, file XML annuali pubblicati dalla SA).
+PARTE 15 – CONTENZIOSO
+Giuslavoristico: causa dell’ex DG Cassano contro la decadenza — Tribunale (aprile 2026) respinge il ricorso: licenziamento per legge legittimo, dovuto solo il TFR. Precedente favorevole all’Ente.
+Penale/contabile: inchiesta Procura di Bari su assunzioni e nomina DG (fascicolo esplorativo, GdF); indagine Corte dei Conti su consulenze (2025); indagine ANAC su concorso dirigenti (2022).
+Amministrativo: prevedibile contenzioso da procedure concorsuali (concorsi con anomalie 2022; concorso "sartoriale" 20 posti contestato dalla stampa a settembre 2025).
+Gestione: elenco aperto di avvocati per patrocinio e consulenza (aggiornamento settembre 2026) — l’Ente esternalizza la difesa con procedura trasparente.
+Criticità ricorrente: il rischio dominante dell’Ente non è il contenzioso appalti (fisiologico) ma quello da procedure selettive del personale e da responsabilità erariale dei vertici — esattamente il perimetro delle coperture di RC patrimoniale/colpa grave e tutela legale.
+[DA VERIFICARE] Ricognizione massiva TAR Puglia/CdS e Corte dei Conti (banche dati giustizia-amministrativa.it e corteconti.it) per l’elenco completo dei giudizi pendenti e definiti.
+PARTE 16 – RASSEGNA STAMPA (ultimi 24 mesi)
+Polarità
+Evidenze principali (set 2024 – set 2026)
+Positive
+Superamento target GOL/PNRR (lug 2025 e lug 2026); Job&Orienta; 40 posti categorie protette (lug 2025); Fiera del lavoro Ceglie Messapica: 25 aziende, 350 colloqui (set 2025); recruiting day anche in carcere a Lecce (nov 2025); ICT Job Days Bari (set 2026); WorkUP e report offerte settimanali; Expo ITS; progetto MiCS migrazioni (set 2026)
+Critiche
+Corte dei Conti su consulenze "agli amici" e contratto non pubblicato (2025); concorso "sartoriale" 20 posti a ridosso delle elezioni (set 2025); strascichi parentopoli (sentenza Cassano apr 2026, lettura comunque favorevole all’Ente)
+Contesto
+Elezioni regionali nov 2025, insediamento Decaro gen 2026, giunta con assessore tecnico al Lavoro (Di Sciascio); avvio rinnovo CdA ARPAL (feb 2026)
+
+Lettura: la narrazione pubblica dell’Ente è in risalita netta sul fronte dei risultati occupazionali, ma la stampa mantiene un riflesso investigativo su personale e incarichi. Ogni fornitore deve presumere che i propri atti con ARPAL possano finire sul giornale: irreprensibilità documentale come requisito.
+PARTE 17 – ANALISI SWOT
+Strengths
+Weaknesses
+Rete capillare (44 CPI) e personale rinnovato; risultati GOL sopra target; forte capacità di comunicazione; governance riformata e presidio legalità; filiera regionale coesa (Dipartimento-ARPAL-APL-formazione)
+Eredità reputazionale 2020-22; processi amministrativi lenti (bilanci in ritardo di approvazione); dipendenza da fondi vincolati; frammentazione ICT back-office; probabile assenza di presidio assicurativo strutturato [DA VERIFICARE]
+
+Opportunities
+Threats
+Nuovo ciclo politico (Decaro/Di Sciascio) orientato a discontinuità e managerialità; rinnovo CdA 2026; fondi FSE+ 2021-27 e coda PNRR; domanda crescente di servizi alle imprese; digitalizzazione spinta
+Fine dei fondi PNRR (cliff 2026); contenzioso da concorsi; nuove inchieste su incarichi; turnover del personale verso altre PA; instabilità dei vertici durante la transizione
+
+PARTE 18 – MATRICE DEI RISCHI DELL’ENTE
+Rischio
+Prob.
+Impatto
+Controlli esistenti
+Mitigazione (dove l’offerta può inserirsi)
+Responsabilità erariale vertici/dirigenti (incarichi, assunzioni)
+Alta
+Alto
+PTPCT, controllo Giunta, elenco avvocati
+Polizze colpa grave, formazione L. 24/2017-style su liability, audit coperture
+Contenzioso da concorsi/selezioni
+Alta
+Medio-alto
+Formalizzazione procedure, società esterne selezione
+Tutela legale, gestione sinistri strutturata
+Danni a terzi presso 44 sedi aperte al pubblico
+Media
+Medio
+Sicurezza 81/08
+RCT/O adeguata, risk survey sedi
+Cyber/data breach (dati di centinaia di migliaia di utenti)
+Media
+Alto
+DPO nominato, SPID, piattaforme regionali
+Polizza cyber, incident response, DPIA di supporto
+Interruzione servizi ICT esternalizzati
+Media
+Medio
+Contratti con fornitori multipli
+Clausole SLA, coperture BI/extra-costi
+Perdita fondi per mancato raggiungimento target
+Bassa (trend positivo)
+Alto
+Monitoraggio GOL
+Reporting a supporto rendicontazione
+Reputazionale/media
+Alta
+Medio
+Comunicazione strutturata
+Crisis support, riservatezza contrattuale
+
+PARTE 19 – COME RAGIONA L’ENTE
+Sintesi consulenziale. ARPAL Puglia è un’organizzazione che ha interiorizzato tre traumi e un successo. I traumi: (1) essere nata percepita come serbatoio di consenso — da cui l’ossessione attuale per la procedura ineccepibile; (2) essere stata decapitata per legge — da cui la deferenza verso Regione e organi di controllo; (3) essere cresciuta più in fretta dei propri processi amministrativi — da cui bilanci in ritardo, ICT a mosaico, fame di supporto specialistico esterno purché irreprensibile. Il successo: i target GOL superati, che hanno dato all’Ente per la prima volta un’identità positiva misurabile — da cui la centralità assoluta di KPI, monitoraggio e comunicazione dei risultati.
+Priorità reali: difendere la reputazione riconquistata; consolidare il personale; superare indenne la transizione politica; non perdere un euro di fondi vincolati.
+Punti dolenti: paura dell’errore amministrativo individuale (dirigenti e funzionari firmano sotto scrutinio di Corte dei Conti e stampa); carico burocratico dell’iter Direttore→CdA→Giunta; dipendenza da fornitori ICT esterni.
+Esigenze non esplicitate: qualcuno che tolga lavoro invece di aggiungerne (fornitori "chiavi in mano" con reporting pronto per CdA e Regione); protezione personale dei decisori (colpa grave, tutela legale); accompagnamento formativo che faccia sentire il personale più sicuro nel firmare atti.
+Stile decisionale: prudente, documentale, sensibile al precedente; l’innovazione è benvenuta solo se confezionata in piena conformità.
+PARTE 20 – COME VINCERE LA GARA (prospettiva della Commissione)
+Cosa vorrebbe realmente leggere una commissione ARPAL: un progetto che dimostri di conoscere QUESTO ente (non "la PA" in generale), che riduca il rischio personale di chi lo valuta e lo gestirà, e che produca evidenze misurabili da inserire nei report interni.
+Criterio tipico OEPV
+Elementi da massimo punteggio per ARPAL
+Modello organizzativo del servizio
+Team dedicato nominativo con referente unico; presidio su Bari/Modugno; copertura dei 4 ambiti territoriali; tempi di risposta differenziati e stringenti
+Conoscenza dell’Ente e analisi dei rischi
+Mappatura 44 CPI, collocamento mirato, GOL, personale >500, governance L.R. 23/2022; matrice rischi come quella in Parte 18, con programma assicurativo target
+Metodologia e strumenti
+Portale/dashboard con audit trail; reportistica trimestrale formattata per CdA e per la Giunta; integrazione con flussi di rendicontazione PNRR/FSE+
+Gestione sinistri/criticità
+SLA numerici (presa in carico 24-48h), escalation, referente legale; statistiche periodiche utilizzabili nel PIAO
+Formazione e affiancamento
+Piano formativo per dirigenti/PO su responsabilità amministrativa (tema Legge sulla responsabilità erariale vigente), risk management, gestione coperture; crediti/attestati
+Elementi migliorativi
+Risk survey delle sedi; DPIA/cyber assessment di cortesia; supporto al bilancio di genere e certificazione parità (sensibilità CUG); zero costi occulti
+Sostenibilità/ESG e pari opportunità
+Impegni concreti misurabili, coerenti con PIAO sez. parità di genere
+
+PARTE 21 – SUGGERIMENTI OPERATIVI
+INSERIRE: capitolo di conoscenza dell’Ente con citazioni puntuali di atti (L.R. 29/2018, L.R. 23/2022, DGR 862/2023, DGR 342/2024, PIAO 2025-2027, delibere CdA di bilancio) — dimostra studio reale; KPI tabellari con formule di calcolo; cronoprogramma di insediamento a 30/60/90 giorni; modello di report trimestrale allegato come fac-simile.
+INSERIRE (specifico assicurativo): programma coperture proposto per fasi (audit → gap analysis → gare polizze), con priorità su RC patrimoniale/colpa grave, tutela legale, cyber, RCT/O multi-sede; piano di gestione sinistri con SLA; formazione accreditata al personale.
+EVITARE: riferimenti economici nel progetto tecnico (errore già censito nei precedenti lavori); genericità da template; qualunque tono che evochi rapporti fiduciari informali; promesse non misurabili; nominare ARPA Puglia per errore (rischio concreto di contaminazione tra dossier: enti distinti).
+KPI DA PROPORRE: tempo medio apertura sinistro; % sinistri chiusi entro X gg; tempo risposta quesiti (24/48h); n. report/anno; n. ore formazione erogate; saving/recupero franchigie documentato; tasso copertura sedi con risk survey al mese 12.
+DASHBOARD: cruscotto sinistri e coperture con export per CdA; registro scadenze polizze; libreria documentale con conservazione a norma.
+ALLEGATI: CV team, certificazioni societarie (9001/27001/PdR 125), fac-simile report, piano formazione, modello risk survey, informativa privacy e DPA già predisposto per il DPO (Ing. Cafagno).
+PARTE 22 – CHECKLIST FINALE
+Checklist di verifica pre-offerta. Legenda: Importanza/Priorità: A=critica, B=alta, C=media. Impatto sul punteggio: diretto (D), indiretto (I), ammissibilità (AMM). La checklist è organizzata per aree; le verifiche marcate (*) dipendono dal futuro disciplinare e vanno completate alla pubblicazione del bando.
+A. Ente e contesto
+Verifica
+Fonte
+Imp.
+Impatto
+Prior.
+Verificata denominazione esatta (ARPAL, non ARPA)
+L.R. 29/2018
+A
+AMM
+A
+Citati L.R. 29/2018 e L.R. 23/2022 correttamente
+BURP
+A
+D
+A
+Aggiornato assetto CdA post-avviso feb 2026
+BURP n.16/2026
+A
+D
+A
+Verificato Direttore in carica alla data di offerta
+AT/DGR
+A
+D
+A
+Mappati 4 ambiti e 44 CPI con elenco sedi aggiornato
+Sito ARPAL
+B
+D
+B
+Recepito numero dipendenti aggiornato (>500)
+Portale CUG/Conto annuale
+B
+D
+B
+Individuati assessore e Dipartimento regionale competenti
+regione.puglia.it
+B
+I
+B
+Verificate sedi legale (Bari) e operativa (Modugno)
+Atti albo
+B
+I
+C
+Analizzato PIAO vigente e citati obiettivi pertinenti
+piao.dfp.gov.it/AT
+A
+D
+A
+Verificata assenza di conflitti di interesse del team
+Interno
+A
+AMM
+A
+
+B. Lex specialis (*)
+Verifica
+Fonte
+Imp.
+Impatto
+Prior.
+Letti integralmente bando, disciplinare, capitolato
+EmPULIA
+A
+AMM
+A
+Estratti criteri e sub-criteri con pesi
+Disciplinare
+A
+D
+A
+Verificati limiti di pagine/font/formato
+Disciplinare
+A
+AMM
+A
+Verificato divieto riferimenti economici nel tecnico
+Disciplinare
+A
+AMM
+A
+Censite FAQ/chiarimenti RUP fino a scadenza
+EmPULIA
+A
+D
+A
+Identificato RUP e struttura proponente
+Bando
+B
+I
+B
+Verificati requisiti speciali (iscrizione RUI sez. B, fatturato)
+Bando
+A
+AMM
+A
+Garanzia provvisoria e imposta di bollo predisposte
+Bando
+A
+AMM
+A
+DGUE e dichiarazioni artt. 94-98 D.Lgs. 36/2023 complete
+Codice
+A
+AMM
+A
+Sopralluogo/quesiti su statistica sinistri richiesti nei termini
+Bando
+B
+D
+B
+
+C. Contenuto tecnico
+Verifica
+Fonte
+Imp.
+Impatto
+Prior.
+Capitolo conoscenza Ente con fonti citate
+Questo dossier
+A
+D
+A
+Matrice rischi specifica ARPAL inclusa
+Parte 18
+A
+D
+A
+Programma assicurativo target motivato
+Analisi
+A
+D
+A
+SLA numerici su sinistri e quesiti
+Best practice
+A
+D
+A
+KPI con formule e target
+Parte 21
+A
+D
+A
+Cronoprogramma 30/60/90 giorni
+Best practice
+B
+D
+B
+Team nominativo con CV e referente unico
+Requisiti
+A
+D
+A
+Piano formazione dirigenti su responsabilità erariale
+Sensibilità Ente
+B
+D
+A
+Dashboard/report fac-simile allegati
+Parte 21
+B
+D
+B
+Capitolo privacy/DPA coordinato con DPO
+GDPR
+B
+D
+B
+Elementi ESG e parità di genere concreti
+PIAO/CUG
+B
+D
+B
+Zero promesse non misurabili
+QA interno
+A
+I
+A
+
+D. Qualità formale
+Verifica
+Fonte
+Imp.
+Impatto
+Prior.
+Nessuna occorrenza di "ARPA Puglia" nel testo (search finale)
+QA
+A
+I
+A
+Metadati file ripuliti (autore, alt-text immagini)
+QA
+A
+I
+A
+Font/margini conformi; conteggio pagine certificato
+Disciplinare
+A
+AMM
+A
+Firme digitali valide e marcature temporali
+EmPULIA
+A
+AMM
+A
+Coerenza terminologica (CPI, LEP, GOL, SIISL)
+QA
+C
+I
+C
+Tabelle leggibili in stampa B/N
+QA
+C
+I
+C
+Indice, numerazione, riferimenti incrociati corretti
+QA
+B
+I
+B
+Versione finale revisionata da secondo lettore
+QA
+B
+I
+B
+
+E. Post-aggiudicazione (anticipare in offerta)
+Verifica
+Fonte
+Imp.
+Impatto
+Prior.
+Piano di subentro/primo audit coperture
+Offerta
+B
+D
+B
+Modello report trimestrale per CdA pronto
+Offerta
+B
+D
+B
+Registro scadenze e piano gare polizze
+Offerta
+B
+D
+B
+Procedura sinistri con modulistica
+Offerta
+B
+D
+B
+Canale dedicato U.O. Patrimonio e Attività Negoziali
+Offerta
+B
+I
+B
+Piano continuità/sostituzione referente
+Offerta
+C
+D
+C
+
+Nota metodologica: la checklist sopra (46 verifiche core) è il nucleo verificabile oggi su fonti ufficiali. L’estensione oltre le 200 verifiche richiesta dal Prompt Master si completa meccanicamente alla pubblicazione della lex specialis, esplodendo l’area B su ogni articolo di disciplinare e capitolato (una verifica per clausola): operazione da eseguire sul testo reale per non produrre voci inventate, in coerenza con la regola "non inventare nulla".
+MAPPA DEGLI STAKEHOLDER (sintesi)
+Stakeholder
+Potere
+Interesse
+Strategia relazionale in gara
+Giunta regionale / Assessore Di Sciascio
+Alto
+Alto
+Coerenza con indirizzi; nessun contatto diretto in gara
+CdA ARPAL (in rinnovo)
+Alto
+Medio
+Report-ready deliverables
+Direttore G. Budano
+Alto
+Alto
+Linguaggio KPI e gestione
+U.O. Patrimonio e Attività Negoziali
+Alto (procedurale)
+Alto
+Precisione documentale assoluta
+Dirigenti UO / coordinatori ambiti
+Medio
+Alto
+Ridurre il loro carico e rischio
+DPO (Ing. Cafagno)
+Medio
+Medio
+DPA e misure privacy pronte
+OO.SS. / CUG
+Medio
+Medio
+Formazione e tutele personale
+Stampa locale
+Medio
+Alto
+Irreprensibilità; nessuna esposizione
+Corte dei Conti / ANAC / Procura
+Alto
+Variabile
+Compliance totale, tracciabilità
+
+SINTESI FINALE – PRIORITÀ STRATEGICHE
+1. Presidiare EmPULIA e AT ARPAL per intercettare la pubblicazione della gara; nel frattempo completare le verifiche [DA VERIFICARE] di questo dossier (polizze attive, broker incumbent, bilanci, regolamento acquisti).
+2. Costruire l’offerta attorno ai tre bisogni profondi: protezione personale dei decisori, riduzione del carico amministrativo, evidenze misurabili per CdA/Regione.
+3. Tarare il tono su compliance e misurabilità; espungere ogni elemento economico dal tecnico; QA finale anti-contaminazione ARPA/ARPAL.
+4. Considerare la transizione di vertice 2026 (nuovo CdA, giunta Decaro): l’offerta deve essere robusta rispetto al cambio di interlocutori politici, ancorandosi ai dirigenti tecnici e agli atti.
+FONTI PRINCIPALI
+arpal.regione.puglia.it – sezioni Agenzia (Cos’è/Mission/Organizzazione/CdA/Direttore/Uffici), GOL, Concorsi, news istituzionali
+albo-arpal.regione.puglia.it – Albo Pretorio e Amministrazione Trasparente (determinazioni R.G. 73/2025, 1716/2025; delibere CdA bilancio 31/2024, 5-11-23/2025; PIAO Del. CdA 2/2025)
+piao.dfp.gov.it – PIAO ARPAL 2023-2025 (testo integrale)
+BURP n. 16 suppl. del 26/02/2026 – Avviso rinnovo Presidente e CdA ARPAL
+Regione Puglia (regione.puglia.it, press.regione.puglia.it) – Giunta Decaro e deleghe (16/01/2026); avvisi nomine agenzie; DGR 862/2023, 1183/2024, 342/2024 (citate negli atti)
+sintesi.regione.puglia.it – sistema regionale politiche attive
+Portale CUG – Dipartimento Funzione Pubblica (dotazione >500 dipendenti, composizione CUG)
+Stampa: La Gazzetta del Mezzogiorno (dossier parentopoli 2022-23; Corte dei Conti consulenze 2025; sentenza Cassano 24/04/2026; concorso 20 posti set 2025); BariToday; Quotidiano di Puglia; Ilikepuglia (target GOL lug 2026); Consiglio regionale Puglia (mozioni FdI)
+Wikipedia (voci ARPAL Puglia, Antonio Decaro) – solo per riscontro incrociato di dati confermati da fonti primarie
