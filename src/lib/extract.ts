@@ -34,10 +34,10 @@ function clean(text: string) {
 
 export function extractFacts(corpus: string) {
   const facts: Record<string, string> = {};
-  const cig = corpus.match(/CIG[:\s]*([A-Z0-9]+)/i);
+  const cig = corpus.match(/\bCIG[:\s]*([A-Z0-9]{6,})\b/i);
   if (cig) facts.cig = cig[1];
-  const rdo = corpus.match(/6522966|RDO[^\n]{0,40}/i);
-  if (rdo) facts.rdo = rdo[0];
+  const rdo = corpus.match(/\b(?:RDO\s*)?(6522966)\b/i);
+  if (rdo) facts.rdo = `RDO ${rdo[1]}`;
   const rup = corpus.match(/Responsabile del procedimento:\s*([^\n]+)/i);
   if (rup) facts.rup = rup[1].trim();
   const ente = corpus.match(
