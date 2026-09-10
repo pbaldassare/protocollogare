@@ -6,7 +6,55 @@ function clip(text: string, max = 12000) {
   return `${text.slice(0, max)}\n\n[… testo troncato per contesto …]`;
 }
 
+async function callMoonshot(system: string, user: string) {
+  const key = process.env.MOONSHOT_API_KEY;
+  if (!key) return null;
+  const base = (process.env.MOONSHOT_BASE_URL || "https://api.moonshot.ai/v1").replace(/\/$/, "");
+  const model = process.env.MOONSHOT_MODEL || "kimi-k2.6";
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), Number(process.env.MOONSHOT_TIMEOUT_MS || 90000));
+  let res: Response;
+  try {
+    res = await fetch(`${base}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${key}`,
+      },
+      signal: controller.signal,
+      body: JSON.stringify({
+        model,
+        max_tokens: Number(process.env.MOONSHOT_MAX_TOKENS || 1800),
+        thinking: { type: "disabled" },
+        reasoning_effort: "low",
+        messages: [
+          { role: "system", content: system },
+          { role: "user", content: user },
+        ],
+      }),
+    });
+  } catch (err) {
+    if (err instanceof Error && err.name === "AbortError") {
+      throw new Error("Moonshot: timeout. Riprova o riduci i documenti.");
+    }
+    throw err;
+  } finally {
+    clearTimeout(timer);
+  }
+  if (!res.ok) {
+    throw new Error(`Moonshot: ${await res.text()}`);
+  }
+  const data = (await res.json()) as {
+    choices?: { message?: { content?: string; reasoning_content?: string } }[];
+  };
+  const message = data.choices?.[0]?.message;
+  const text = (message?.content || "").trim() || (message?.reasoning_content || "").trim();
+  return { model, text };
+}
+
 async function callModel(system: string, user: string) {
+  const moonshot = await callMoonshot(system, user);
+  if (moonshot?.text) return moonshot;
   const openai = process.env.OPENAI_API_KEY;
   const anthropic = process.env.ANTHROPIC_API_KEY;
   if (anthropic) {
@@ -80,16 +128,16 @@ export async function generateOutput(input: {
     )
     .join("\n");
 
-  const system = `${input.prompt.body}\n\nFORMATO DELL'OUTPUT (istruibile, modificabile dal tenant):\n${format}\n\nIstruzione extra della pratica:\n${input.extraInstruction || "Nessuna."}`;
+  const system = `${clip(input.prompt.body, 7000)}\n\nFORMATO DELL'OUTPUT (istruibile, modificabile dal tenant):\n${format}\n\nIstruzione extra della pratica:\n${input.extraInstruction || "Nessuna."}`;
 
   const user = `Pratica: ${input.title}
 Ente: ${input.ente}
 Riferimento: ${input.cig}
 
 Documenti caricati:
-${clip(corpus, 24000)}
+${clip(corpus, 8000)}
 
-Produci ora l'OUTPUT completo nel formato richiesto. Non inventare. Segna i vuoti.`;
+Produci ora l'OUTPUT completo nel formato richiesto, in italiano. Non inventare. Segna i vuoti con ⚠ DA VERIFICARE o [●:].`;
 
   const llm = await callModel(system, user);
   if (llm?.text) return llm;

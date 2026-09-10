@@ -24,7 +24,7 @@ Apri [http://localhost:3000](http://localhost:3000), accedi e apri la pratica **
 4. **Istruzioni IA**: Prompt Master + sezioni di formato modificabili
 5. **Genera Output** e **Salva** versioni (bozza / definitivo)
 
-Senza `OPENAI_API_KEY` o `ANTHROPIC_API_KEY` l’output viene costruito dal motore locale ID Guard, rispettando le sezioni del Prompt Master e senza inventare dati.
+Con `MOONSHOT_API_KEY` l’Output è redatto da Kimi/Moonshot (`kimi-k2.6` su `https://api.moonshot.ai/v1`). Senza chiave si usa il motore locale ID Guard.
 
 ## Database
 

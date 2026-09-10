@@ -10,7 +10,7 @@ import {
 } from "@/lib/store";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 120;
 
 function visible(tenantId: string, session: { tenantId: string; role: string }) {
   return canSeeAllTenants(session.role as "platform_admin") || tenantId === session.tenantId;
@@ -36,22 +36,27 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
   practice.extraInstruction = extra;
   await updatePractice(id, { extraInstruction: extra });
 
-  const result = await generateOutput({
-    title: practice.title,
-    ente: practice.ente,
-    cig: practice.cig,
-    extraInstruction: extra,
-    prompt,
-    documents,
-  });
+  try {
+    const result = await generateOutput({
+      title: practice.title,
+      ente: practice.ente,
+      cig: practice.cig,
+      extraInstruction: extra,
+      prompt,
+      documents,
+    });
 
-  const output = await upsertGeneratedOutput({
-    practice,
-    promptId: prompt.id,
-    title: `Output — ${practice.title}`,
-    body: result.text,
-    model: result.model,
-  });
+    const output = await upsertGeneratedOutput({
+      practice,
+      promptId: prompt.id,
+      title: `Output — ${practice.title}`,
+      body: result.text,
+      model: result.model,
+    });
 
-  return NextResponse.json({ output });
+    return NextResponse.json({ output });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Errore generazione";
+    return NextResponse.json({ error: message }, { status: 502 });
+  }
 }
