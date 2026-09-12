@@ -143,7 +143,7 @@ Produci ora l'OUTPUT completo nel formato richiesto, in italiano. Non inventare.
   if (llm?.text) return llm;
 
   return {
-      model: "protocollo-gare-local",
+    model: "protocollo-gare-local",
     text: localOutput(input, facts, corpus),
   };
 }
