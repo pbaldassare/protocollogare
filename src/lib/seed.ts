@@ -97,9 +97,9 @@ export function seedDatabase(db: Database): Database {
   const now = new Date().toISOString();
   db.tenants.push(
     {
-      id: "tenant-idguard",
-      name: "ID Guard",
-      slug: "idguard",
+      id: "tenant-pgare",
+      name: "Protocollo Gare",
+      slug: "protocollo-gare",
       createdAt: now,
     },
     {
@@ -115,14 +115,14 @@ export function seedDatabase(db: Database): Database {
     email: "paolo.baldassare@gmail.com",
     name: "Paolo Baldassare",
     role: "platform_admin",
-    tenantId: "tenant-idguard",
+    tenantId: "tenant-pgare",
     passwordHash: process.env.ADMIN_PASSWORD_HASH || ADMIN_HASH,
     createdAt: now,
   });
 
   db.prompts.push({
     id: "prompt-master",
-    tenantId: "tenant-idguard",
+    tenantId: "tenant-pgare",
     name: "Prompt Master — Commissione Gare Broker",
     description:
       "Analisi, valutazione e blindatura del Progetto Tecnico. Cambia le sezioni per variare il formato dell’output.",
@@ -134,7 +134,7 @@ export function seedDatabase(db: Database): Database {
 
   db.practices.push({
     id: "practice-arpal",
-    tenantId: "tenant-idguard",
+    tenantId: "tenant-pgare",
     title: "ARPAL Puglia — Brokeraggio 2026-2028",
     ente: "ARPAL Puglia",
     cig: "RDO 6522966",
@@ -160,7 +160,7 @@ export function seedDatabase(db: Database): Database {
     const text = existsSync(full) ? readFileSync(full, "utf-8") : "";
     db.documents.push({
       id,
-      tenantId: "tenant-idguard",
+      tenantId: "tenant-pgare",
       practiceId: "practice-arpal",
       kind,
       filename,

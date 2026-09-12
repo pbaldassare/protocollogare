@@ -29,7 +29,7 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
     return NextResponse.json({ error: "File mancante" }, { status: 400 });
   }
   const bytes = Buffer.from(await file.arrayBuffer());
-  const dir = mkdtempSync(path.join(tmpdir(), "idguard-"));
+  const dir = mkdtempSync(path.join(tmpdir(), "pgare-"));
   const tmpPath = path.join(dir, file.name.replace(/[^\w.\-]/g, "_") || "upload.bin");
   writeFileSync(tmpPath, bytes);
 

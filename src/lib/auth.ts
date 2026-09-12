@@ -4,9 +4,9 @@ import { cookies } from "next/headers";
 import { findUserByEmail as findUserRow, getTenant } from "./store";
 import type { SessionUser } from "./types";
 
-const COOKIE = "idguard_session";
+const COOKIE = "pgare_session";
 const secret = new TextEncoder().encode(
-  process.env.SESSION_SECRET || "idguard-protocollogare-dev-secret-change-me",
+  process.env.SESSION_SECRET || "protocollo-gare-dev-secret-change-me",
 );
 
 export async function verifyPassword(password: string, hash: string) {
@@ -64,7 +64,7 @@ export async function toSessionUser(user: {
     name: user.name,
     role: user.role,
     tenantId: user.tenantId,
-    tenantName: tenant?.name ?? "ID Guard",
+    tenantName: tenant?.name ?? "Protocollo Gare",
   };
 }
 

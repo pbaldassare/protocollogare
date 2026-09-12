@@ -8,7 +8,7 @@ if (!url) {
   process.exit(1);
 }
 
-const TENANT_IDGUARD = "a1111111-1111-4111-8111-111111111111";
+const TENANT_PGARE = "a1111111-1111-4111-8111-111111111111";
 const TENANT_CONSULBROKERS = "a2222222-2222-4222-8222-222222222222";
 const USER_ADMIN = "b1111111-1111-4111-8111-111111111111";
 const PROMPT_MASTER = "c1111111-1111-4111-8111-111111111111";
@@ -32,17 +32,17 @@ await client.query(schema);
 
 await client.query(
   `insert into tenants (id, name, slug) values
-     ($1,'ID Guard','idguard'),
+     ($1,'Protocollo Gare','protocollo-gare'),
      ($2,'Consulbrokers','consulbrokers')
-   on conflict (id) do update set name = excluded.name`,
-  [TENANT_IDGUARD, TENANT_CONSULBROKERS],
+   on conflict (id) do update set name = excluded.name, slug = excluded.slug`,
+  [TENANT_PGARE, TENANT_CONSULBROKERS],
 );
 
 await client.query(
   `insert into users (id, email, name, role, tenant_id, password_hash)
    values ($1,$2,$3,'platform_admin',$4,$5)
    on conflict (email) do update set password_hash = excluded.password_hash, name = excluded.name, role = excluded.role`,
-  [USER_ADMIN, "paolo.baldassare@gmail.com", "Paolo Baldassare", TENANT_IDGUARD, ADMIN_HASH],
+  [USER_ADMIN, "paolo.baldassare@gmail.com", "Paolo Baldassare", TENANT_PGARE, ADMIN_HASH],
 );
 
 await client.query(
@@ -51,7 +51,7 @@ await client.query(
    on conflict (id) do update set body = excluded.body, sections = excluded.sections, name = excluded.name`,
   [
     PROMPT_MASTER,
-    TENANT_IDGUARD,
+    TENANT_PGARE,
     "Prompt Master — Commissione Gare Broker",
     "Analisi, valutazione e blindatura del Progetto Tecnico. Cambia le sezioni per variare il formato dell’output.",
     promptBody,
@@ -66,7 +66,7 @@ await client.query(
    on conflict (id) do update set title = excluded.title, extra_instruction = excluded.extra_instruction`,
   [
     PRACTICE_ARPAL,
-    TENANT_IDGUARD,
+    TENANT_PGARE,
     "ARPAL Puglia — Brokeraggio 2026-2028",
     "ARPAL Puglia",
     "RDO 6522966",
@@ -91,7 +91,7 @@ for (const [id, kind, filename, file] of docs) {
        (id, tenant_id, practice_id, kind, filename, mime_type, storage_path, extracted_text, file_bytes, size)
      values ($1,$2,$3,$4,$5,'text/plain','seed',$6,$7,$8)
      on conflict (id) do update set extracted_text = excluded.extracted_text, size = excluded.size`,
-    [id, TENANT_IDGUARD, PRACTICE_ARPAL, kind, filename, text, Buffer.from(text), text.length],
+    [id, TENANT_PGARE, PRACTICE_ARPAL, kind, filename, text, Buffer.from(text), text.length],
   );
 }
 
