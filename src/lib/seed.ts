@@ -120,6 +120,16 @@ export function seedDatabase(db: Database): Database {
     createdAt: now,
   });
 
+  db.users.push({
+    id: "user-ufficio-bari",
+    email: "ufficiobari@consulbrokers.it",
+    name: "Ufficio Bari",
+    role: "admin",
+    tenantId: "tenant-consulbrokers",
+    passwordHash: process.env.ADMIN_PASSWORD_HASH || ADMIN_HASH,
+    createdAt: now,
+  });
+
   db.prompts.push({
     id: "prompt-master",
     tenantId: "tenant-pgare",

@@ -13,8 +13,14 @@ import type {
   SessionUser,
   Tenant,
   User,
+  KnowledgeDocument,
+  KnowledgeKind,
+  AiMemory,
+  MemoryKind,
 } from "./types";
 import { query, queryOne } from "./db";
+import { DEFAULT_SECTIONS } from "./seed";
+import { workspaceId } from "./workspace";
 
 type TenantRow = { id: string; name: string; slug: string; created_at: Date };
 type UserRow = {
@@ -180,12 +186,63 @@ export async function listTenants(session: SessionUser) {
 }
 
 export async function createTenant(name: string) {
-  const slug = name.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const base = name.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "cliente";
+  let slug = base;
+  for (let i = 2; i < 20; i++) {
+    const exists = await queryOne<{ id: string }>("select id from tenants where slug = $1", [slug]);
+    if (!exists) break;
+    slug = `${base}-${i}`;
+  }
   const row = await queryOne<TenantRow>(
     `insert into tenants (name, slug) values ($1, $2) returning *`,
     [name.trim(), slug],
   );
   return row ? mapTenant(row) : null;
+}
+
+export async function cloneDefaultPrompt(tenantId: string) {
+  const template = await queryOne<PromptRow>(
+    "select * from prompts where is_default = true order by updated_at desc limit 1",
+  );
+  return createPrompt({
+    tenantId,
+    name: template?.name ?? "Prompt Master — Commissione Gare",
+    description:
+      template?.description ??
+      "Formato di output di questo cliente. Modificalo per istruire la sua IA.",
+    body:
+      template?.body ??
+      "Analizza solo i documenti e la memoria di questo cliente. Non usare dati di altri spazi. Non inventare.",
+    sections: template?.sections?.length ? template.sections : DEFAULT_SECTIONS,
+    isDefault: true,
+  });
+}
+
+export async function onboardClient(input: {
+  name: string;
+  adminName?: string;
+  adminEmail?: string;
+  adminPasswordHash?: string;
+}) {
+  const tenant = await createTenant(input.name);
+  if (!tenant) return null;
+  await cloneDefaultPrompt(tenant.id);
+  await insertMemory({
+    tenantId: tenant.id,
+    kind: "fact",
+    content: `Questa IA lavora solo nello spazio cliente “${tenant.name}”. Non mescolare dati di altri clienti.`,
+  });
+  let admin: User | null = null;
+  if (input.adminEmail && input.adminPasswordHash) {
+    admin = await createUser({
+      email: input.adminEmail,
+      name: input.adminName?.trim() || input.adminEmail,
+      role: "admin",
+      tenantId: tenant.id,
+      passwordHash: input.adminPasswordHash,
+    });
+  }
+  return { tenant, admin };
 }
 
 export async function findUserByEmail(email: string) {
@@ -202,25 +259,16 @@ export async function getTenant(id: string) {
 }
 
 export async function listPractices(session: SessionUser) {
-  const rows = canSeeAll(session.role)
-    ? await query<PracticeRow & { tenant_name: string; documents: string; outputs: string }>(
-        `select p.*, t.name as tenant_name,
-                (select count(*) from documents d where d.practice_id = p.id)::text as documents,
-                (select count(*) from outputs o where o.practice_id = p.id)::text as outputs
-           from practices p
-           join tenants t on t.id = p.tenant_id
-          order by p.updated_at desc`,
-      )
-    : await query<PracticeRow & { tenant_name: string; documents: string; outputs: string }>(
-        `select p.*, t.name as tenant_name,
-                (select count(*) from documents d where d.practice_id = p.id)::text as documents,
-                (select count(*) from outputs o where o.practice_id = p.id)::text as outputs
-           from practices p
-           join tenants t on t.id = p.tenant_id
-          where p.tenant_id = $1
-          order by p.updated_at desc`,
-        [session.tenantId],
-      );
+  const rows = await query<PracticeRow & { tenant_name: string; documents: string; outputs: string }>(
+    `select p.*, t.name as tenant_name,
+            (select count(*) from documents d where d.practice_id = p.id)::text as documents,
+            (select count(*) from outputs o where o.practice_id = p.id)::text as outputs
+       from practices p
+       join tenants t on t.id = p.tenant_id
+      where p.tenant_id = $1
+      order by p.updated_at desc`,
+    [workspaceId(session)],
+  );
   return rows.map((r) => ({
     ...mapPractice(r),
     tenantName: r.tenant_name,
@@ -239,15 +287,18 @@ export async function createPractice(input: {
   extraInstruction: string;
   createdBy: string;
 }) {
+  const requested = input.promptId
+    ? await queryOne<PromptRow>(
+        "select * from prompts where id = $1 and tenant_id = $2",
+        [input.promptId, input.tenantId],
+      )
+    : null;
   const prompt =
-    (input.promptId
-      ? await queryOne<PromptRow>("select * from prompts where id = $1", [input.promptId])
-      : null) ??
+    requested ??
     (await queryOne<PromptRow>(
       "select * from prompts where tenant_id = $1 and is_default = true limit 1",
       [input.tenantId],
-    )) ??
-    (await queryOne<PromptRow>("select * from prompts order by updated_at desc limit 1"));
+    ));
 
   const row = await queryOne<PracticeRow>(
     `insert into practices
@@ -366,12 +417,10 @@ async function getPoolCount(text: string, params: unknown[]) {
 }
 
 export async function listPrompts(session: SessionUser) {
-  const rows = canSeeAll(session.role)
-    ? await query<PromptRow>("select * from prompts order by updated_at desc")
-    : await query<PromptRow>(
-        "select * from prompts where tenant_id = $1 or is_default = true order by updated_at desc",
-        [session.tenantId],
-      );
+  const rows = await query<PromptRow>(
+    "select * from prompts where tenant_id = $1 order by updated_at desc",
+    [workspaceId(session)],
+  );
   return rows.map(mapPrompt);
 }
 
@@ -386,11 +435,22 @@ export async function createPrompt(input: {
   description: string;
   body: string;
   sections: PromptTemplateSection[];
+  isDefault?: boolean;
 }) {
+  if (input.isDefault) {
+    await query("update prompts set is_default = false where tenant_id = $1", [input.tenantId]);
+  }
   const row = await queryOne<PromptRow>(
     `insert into prompts (tenant_id, name, description, body, sections, is_default)
-     values ($1,$2,$3,$4,$5::jsonb,false) returning *`,
-    [input.tenantId, input.name, input.description, input.body, JSON.stringify(input.sections)],
+     values ($1,$2,$3,$4,$5::jsonb,$6) returning *`,
+    [
+      input.tenantId,
+      input.name,
+      input.description,
+      input.body,
+      JSON.stringify(input.sections),
+      input.isDefault ?? false,
+    ],
   );
   return row ? mapPrompt(row) : null;
 }
@@ -528,28 +588,20 @@ export async function updateOutput(
 }
 
 export async function listArchive(session: SessionUser) {
-  const docs = canSeeAll(session.role)
-    ? await query<DocumentRow & { practice_title: string }>(
-        `select d.id, d.tenant_id, d.practice_id, d.kind, d.filename, d.mime_type, d.storage_path,
-                left(d.extracted_text, 200) as extracted_text, d.size, d.created_at,
-                p.title as practice_title
-           from documents d join practices p on p.id = d.practice_id
-          order by d.created_at desc`,
-      )
-    : await query<DocumentRow & { practice_title: string }>(
-        `select d.id, d.tenant_id, d.practice_id, d.kind, d.filename, d.mime_type, d.storage_path,
-                left(d.extracted_text, 200) as extracted_text, d.size, d.created_at,
-                p.title as practice_title
-           from documents d join practices p on p.id = d.practice_id
-          where d.tenant_id = $1
-          order by d.created_at desc`,
-        [session.tenantId],
-      );
-  const outs = canSeeAll(session.role)
-    ? await query<OutputRow>("select * from outputs order by updated_at desc")
-    : await query<OutputRow>("select * from outputs where tenant_id = $1 order by updated_at desc", [
-        session.tenantId,
-      ]);
+  const tenant = workspaceId(session);
+  const docs = await query<DocumentRow & { practice_title: string }>(
+    `select d.id, d.tenant_id, d.practice_id, d.kind, d.filename, d.mime_type, d.storage_path,
+            left(d.extracted_text, 200) as extracted_text, d.size, d.created_at,
+            p.title as practice_title
+       from documents d join practices p on p.id = d.practice_id
+      where d.tenant_id = $1
+      order by d.created_at desc`,
+    [tenant],
+  );
+  const outs = await query<OutputRow>(
+    "select * from outputs where tenant_id = $1 order by updated_at desc",
+    [tenant],
+  );
   return {
     documents: docs.map((d) => ({ ...mapDocument(d), practiceTitle: d.practice_title })),
     outputs: outs.map(mapOutput),
@@ -564,6 +616,152 @@ export async function dashboardCounts(session: SessionUser) {
     outputs: practices.reduce((n, p) => n + p.outputs, 0),
     items: practices,
   };
+}
+
+export async function listUsers(tenantId: string) {
+  const rows = await query<UserRow>(
+    "select * from users where tenant_id = $1 order by created_at",
+    [tenantId],
+  );
+  return rows.map(mapUser);
+}
+
+export async function createUser(input: {
+  email: string;
+  name: string;
+  role: Role;
+  tenantId: string;
+  passwordHash: string;
+}) {
+  const row = await queryOne<UserRow>(
+    `insert into users (email, name, role, tenant_id, password_hash)
+     values ($1,$2,$3,$4,$5) returning *`,
+    [input.email.toLowerCase().trim(), input.name.trim(), input.role, input.tenantId, input.passwordHash],
+  );
+  return row ? mapUser(row) : null;
+}
+
+type KnowledgeRow = {
+  id: string;
+  tenant_id: string;
+  title: string;
+  kind: KnowledgeKind;
+  filename: string;
+  mime_type: string;
+  extracted_text: string;
+  size: number;
+  created_at: Date;
+};
+
+function mapKnowledge(r: KnowledgeRow): KnowledgeDocument {
+  return {
+    id: r.id,
+    tenantId: r.tenant_id,
+    title: r.title,
+    kind: r.kind,
+    filename: r.filename,
+    mimeType: r.mime_type,
+    extractedText: r.extracted_text,
+    size: r.size,
+    createdAt: iso(r.created_at),
+  };
+}
+
+export async function listKnowledge(tenantId: string) {
+  const rows = await query<KnowledgeRow>(
+    `select id, tenant_id, title, kind, filename, mime_type, left(extracted_text, 4000) as extracted_text, size, created_at
+       from knowledge_documents where tenant_id = $1 order by created_at desc`,
+    [tenantId],
+  );
+  return rows.map(mapKnowledge);
+}
+
+export async function listKnowledgeForGenerate(tenantId: string) {
+  const rows = await query<KnowledgeRow>(
+    `select id, tenant_id, title, kind, filename, mime_type, extracted_text, size, created_at
+       from knowledge_documents where tenant_id = $1 order by created_at desc limit 20`,
+    [tenantId],
+  );
+  return rows.map(mapKnowledge);
+}
+
+export async function insertKnowledge(input: {
+  tenantId: string;
+  title: string;
+  kind: KnowledgeKind;
+  filename: string;
+  mimeType: string;
+  extractedText: string;
+  fileBytes: Buffer;
+}) {
+  const row = await queryOne<KnowledgeRow>(
+    `insert into knowledge_documents
+      (tenant_id, title, kind, filename, mime_type, extracted_text, file_bytes, size)
+     values ($1,$2,$3,$4,$5,$6,$7,$8)
+     returning id, tenant_id, title, kind, filename, mime_type, extracted_text, size, created_at`,
+    [
+      input.tenantId,
+      input.title,
+      input.kind,
+      input.filename,
+      input.mimeType,
+      input.extractedText,
+      input.fileBytes,
+      input.fileBytes.length,
+    ],
+  );
+  return row ? mapKnowledge(row) : null;
+}
+
+export async function deleteKnowledge(tenantId: string, id: string) {
+  const n = await getPoolCount("delete from knowledge_documents where id = $1 and tenant_id = $2", [
+    id,
+    tenantId,
+  ]);
+  return n > 0;
+}
+
+type MemoryRow = {
+  id: string;
+  tenant_id: string;
+  kind: MemoryKind;
+  content: string;
+  created_at: Date;
+};
+
+function mapMemory(r: MemoryRow): AiMemory {
+  return {
+    id: r.id,
+    tenantId: r.tenant_id,
+    kind: r.kind,
+    content: r.content,
+    createdAt: iso(r.created_at),
+  };
+}
+
+export async function listMemories(tenantId: string) {
+  const rows = await query<MemoryRow>(
+    "select * from ai_memories where tenant_id = $1 order by created_at desc",
+    [tenantId],
+  );
+  return rows.map(mapMemory);
+}
+
+export async function insertMemory(input: {
+  tenantId: string;
+  kind: MemoryKind;
+  content: string;
+}) {
+  const row = await queryOne<MemoryRow>(
+    `insert into ai_memories (tenant_id, kind, content) values ($1,$2,$3) returning *`,
+    [input.tenantId, input.kind, input.content.trim()],
+  );
+  return row ? mapMemory(row) : null;
+}
+
+export async function deleteMemory(tenantId: string, id: string) {
+  const n = await getPoolCount("delete from ai_memories where id = $1 and tenant_id = $2", [id, tenantId]);
+  return n > 0;
 }
 
 export function newId() {

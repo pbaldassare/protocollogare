@@ -10,7 +10,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
         </defs>
         <path
           d="M24 3.5 41 10.2v13.4c0 11.2-7.4 18.6-17 21.4-9.6-2.8-17-10.2-17-21.4V10.2L24 3.5Z"
-          fill="#081A33"
+          fill="#3A342F"
           stroke="url(#pg-gold)"
           strokeWidth="1.6"
         />
@@ -28,7 +28,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
           <div className="font-[family-name:var(--font-display)] text-[15px] tracking-[0.12em] text-[#F3E6C0]">
             PROTOCOLLO GARE
           </div>
-          <div className="text-[10px] uppercase tracking-[0.18em] text-[#8BA3B8]">
+          <div className="text-[10px] uppercase tracking-[0.18em] text-[#B8A99A]">
             Piattaforma documentale
           </div>
         </div>

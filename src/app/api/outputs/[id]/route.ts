@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { canSeeAllTenants, getSession } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { getOutput, updateOutput } from "@/lib/store";
+import { inWorkspace } from "@/lib/workspace";
 
 export async function PATCH(req: Request, ctx: { params: Promise<{ id: string }> }) {
   const session = await getSession();
@@ -8,7 +9,7 @@ export async function PATCH(req: Request, ctx: { params: Promise<{ id: string }>
   const { id } = await ctx.params;
   const current = await getOutput(id);
   if (!current) return NextResponse.json({ error: "Output non trovato" }, { status: 404 });
-  if (!canSeeAllTenants(session.role) && current.tenantId !== session.tenantId) {
+  if (!inWorkspace(session, current.tenantId)) {
     return NextResponse.json({ error: "Output non trovato" }, { status: 404 });
   }
   const body = (await req.json()) as {

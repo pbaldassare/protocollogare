@@ -1,19 +1,22 @@
 import { NextResponse } from "next/server";
-import { canSeeAllTenants, getSession } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { generateOutput } from "@/lib/generate";
 import {
   getPractice,
   getPrompt,
   listDocuments,
+  listKnowledgeForGenerate,
+  listMemories,
   updatePractice,
   upsertGeneratedOutput,
 } from "@/lib/store";
+import { inWorkspace, workspaceName } from "@/lib/workspace";
 
 export const runtime = "nodejs";
 export const maxDuration = 120;
 
-function visible(tenantId: string, session: { tenantId: string; role: string }) {
-  return canSeeAllTenants(session.role as "platform_admin") || tenantId === session.tenantId;
+function visible(tenantId: string, session: Parameters<typeof inWorkspace>[0]) {
+  return inWorkspace(session, tenantId);
 }
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {
@@ -32,11 +35,19 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
     return NextResponse.json({ error: "Carica almeno un documento" }, { status: 400 });
   }
 
+  if (prompt.tenantId !== practice.tenantId) {
+    return NextResponse.json({ error: "Prompt di un altro cliente" }, { status: 400 });
+  }
+
   const extra = body.extraInstruction ?? practice.extraInstruction;
   practice.extraInstruction = extra;
   await updatePractice(id, { extraInstruction: extra });
 
   try {
+    const [knowledge, memories] = await Promise.all([
+      listKnowledgeForGenerate(practice.tenantId),
+      listMemories(practice.tenantId),
+    ]);
     const result = await generateOutput({
       title: practice.title,
       ente: practice.ente,
@@ -44,6 +55,9 @@ export async function POST(req: Request, ctx: { params: Promise<{ id: string }> 
       extraInstruction: extra,
       prompt,
       documents,
+      knowledge,
+      memories,
+      clientName: workspaceName(session),
     });
 
     const output = await upsertGeneratedOutput({

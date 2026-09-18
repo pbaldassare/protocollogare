@@ -1,4 +1,4 @@
-import type { PracticeDocument, PromptRecord } from "./types";
+import type { AiMemory, KnowledgeDocument, PracticeDocument, PromptRecord } from "./types";
 import { extractFacts } from "./extract";
 
 function clip(text: string, max = 12000) {
@@ -113,6 +113,9 @@ export async function generateOutput(input: {
   extraInstruction: string;
   prompt: PromptRecord;
   documents: PracticeDocument[];
+  knowledge?: KnowledgeDocument[];
+  memories?: AiMemory[];
+  clientName?: string;
 }) {
   const corpus = input.documents
     .map(
@@ -127,14 +130,38 @@ export async function generateOutput(input: {
         `${i + 1}. ${s.title}${s.required ? " (obbligatoria)" : ""}\n   ${s.instruction}`,
     )
     .join("\n");
+  const memoryBlock = (input.memories ?? [])
+    .map((m) => `- [${m.kind}] ${m.content}`)
+    .join("\n");
+  const libraryBlock = (input.knowledge ?? [])
+    .map(
+      (d) =>
+        `\n--- ${d.kind.toUpperCase()} | ${d.title || d.filename} ---\n${clip(d.extractedText || "", 2500)}`,
+    )
+    .join("");
 
-  const system = `${clip(input.prompt.body, 7000)}\n\nFORMATO DELL'OUTPUT (istruibile, modificabile dal tenant):\n${format}\n\nIstruzione extra della pratica:\n${input.extraInstruction || "Nessuna."}`;
+  const system = `Cliente / spazio: ${input.clientName || "n.d."}
+Lavora SOLO su questo cliente. Non usare dati, gare o fatti di altri spazi.
+
+${clip(input.prompt.body, 7000)}
+
+MEMORIA IA DEL CLIENTE:
+${memoryBlock || "Nessuna memoria ancora."}
+
+LIBRERIA DEL CLIENTE (bagaglio permanente):
+${clip(libraryBlock, 4000) || "Nessun documento di libreria."}
+
+FORMATO DELL'OUTPUT (istruibile, modificabile dal cliente):
+${format}
+
+Istruzione extra della pratica:
+${input.extraInstruction || "Nessuna."}`;
 
   const user = `Pratica: ${input.title}
 Ente: ${input.ente}
 Riferimento: ${input.cig}
 
-Documenti caricati:
+Documenti caricati in questa pratica:
 ${clip(corpus, 8000)}
 
 Produci ora l'OUTPUT completo nel formato richiesto, in italiano. Non inventare. Segna i vuoti con ⚠ DA VERIFICARE o [●:].`;
