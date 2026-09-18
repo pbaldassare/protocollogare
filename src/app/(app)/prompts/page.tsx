@@ -7,10 +7,13 @@ export default function PromptsPage() {
   const [prompts, setPrompts] = useState<PromptRecord[]>([]);
   const [current, setCurrent] = useState<PromptRecord | null>(null);
   const [saved, setSaved] = useState("");
+  const [clientName, setClientName] = useState("");
 
   async function load() {
-    const res = await fetch("/api/prompts");
+    const [res, me] = await Promise.all([fetch("/api/prompts"), fetch("/api/auth/me")]);
     const data = await res.json();
+    const session = await me.json();
+    setClientName(session.user?.workspaceTenantName || session.user?.tenantName || "");
     setPrompts(data.prompts ?? []);
     setCurrent((c) => c ?? data.prompts?.[0] ?? null);
   }
@@ -74,12 +77,14 @@ export default function PromptsPage() {
     <div className="mx-auto max-w-6xl">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-[#C9A227]">Istruzioni IA</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-[#C9A227]">
+            Istruzioni IA · {clientName || "questo cliente"}
+          </p>
           <h1 className="mt-1 font-[family-name:var(--font-display)] text-4xl text-white">
-            Cambia il formato
+            IA di questo spazio
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-[#D2C4B4]">
-            Il Prompt Master definisce come ragiona l’IA. Le sezioni definiscono la struttura dell’Output. Clona e modifica senza toccare il codice.
+            Prompt e sezioni appartengono solo a {clientName || "questo cliente"}. Non sono dell’admin di piattaforma e non valgono per gli altri spazi.
           </p>
         </div>
         <div className="flex gap-2">
