@@ -14,29 +14,29 @@ export default async function ArchivePage() {
         Documenti salvati
       </h1>
 
-      <h2 className="mt-8 text-sm uppercase tracking-wider text-[#8BA3B8]">Input</h2>
+      <h2 className="mt-8 text-sm uppercase tracking-wider text-[#B8A99A]">Input</h2>
       <div className="mt-3 space-y-2">
         {documents.map((d) => (
           <Link key={d.id} href={`/practices/${d.practiceId}`} className="card block p-4">
             <div className="text-white">{d.filename}</div>
-            <div className="text-xs text-[#8BA3B8]">
+            <div className="text-xs text-[#B8A99A]">
               {d.kind} · {d.practiceTitle} · {new Date(d.createdAt).toLocaleString("it-IT")}
             </div>
           </Link>
         ))}
       </div>
 
-      <h2 className="mt-10 text-sm uppercase tracking-wider text-[#8BA3B8]">Output</h2>
+      <h2 className="mt-10 text-sm uppercase tracking-wider text-[#B8A99A]">Output</h2>
       <div className="mt-3 space-y-2">
         {outputs.map((o) => (
           <Link key={o.id} href={`/practices/${o.practiceId}`} className="card block p-4">
             <div className="text-white">{o.title}</div>
-            <div className="text-xs text-[#8BA3B8]">
+            <div className="text-xs text-[#B8A99A]">
               {o.status} · {o.model} · {new Date(o.updatedAt).toLocaleString("it-IT")}
             </div>
           </Link>
         ))}
-        {!outputs.length && <p className="text-sm text-[#9BB0C3]">Nessun output salvato.</p>}
+        {!outputs.length && <p className="text-sm text-[#D2C4B4]">Nessun output salvato.</p>}
       </div>
     </div>
   );

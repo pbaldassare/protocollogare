@@ -42,7 +42,7 @@ export default function SettingsPage() {
       <h1 className="mt-1 font-[family-name:var(--font-display)] text-4xl text-white">
         Multi-tenant
       </h1>
-      <p className="mt-2 text-sm text-[#9BB0C3]">
+      <p className="mt-2 text-sm text-[#D2C4B4]">
         Ogni tenant isola pratiche, documenti, prompt e output. Solo l’admin di piattaforma può creare nuovi tenant.
       </p>
 
@@ -52,7 +52,7 @@ export default function SettingsPage() {
           {tenants.map((t) => (
             <li key={t.id} className="flex justify-between rounded-xl bg-black/20 px-3 py-2">
               <span className="text-white">{t.name}</span>
-              <span className="text-xs text-[#8BA3B8]">{t.slug}</span>
+              <span className="text-xs text-[#B8A99A]">{t.slug}</span>
             </li>
           ))}
         </ul>

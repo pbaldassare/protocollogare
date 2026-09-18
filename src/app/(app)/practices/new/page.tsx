@@ -50,21 +50,21 @@ export default function NewPracticePage() {
         Carica una gara
       </h1>
       <form onSubmit={onSubmit} className="card mt-8 space-y-4 p-6">
-        <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+        <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
           Titolo
           <input name="title" className="field mt-1" required placeholder="ARPAL Puglia — Brokeraggio 2026-2028" />
         </label>
         <div className="grid gap-4 sm:grid-cols-2">
-          <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+          <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
             Ente
             <input name="ente" className="field mt-1" placeholder="ARPAL Puglia" />
           </label>
-          <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+          <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
             CIG / RDO
             <input name="cig" className="field mt-1" placeholder="6522966" />
           </label>
         </div>
-        <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+        <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
           Prompt / formato
           <select name="promptId" className="field mt-1">
             {prompts.map((p) => (
@@ -74,11 +74,11 @@ export default function NewPracticePage() {
             ))}
           </select>
         </label>
-        <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+        <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
           Note
           <textarea name="notes" className="field mt-1 min-h-20" />
         </label>
-        <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+        <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
           Istruzione extra per l’IA
           <textarea
             name="extraInstruction"
