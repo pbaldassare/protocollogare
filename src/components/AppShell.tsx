@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type { SessionUser } from "@/lib/types";
 import { Logo } from "./Logo";
@@ -22,6 +23,23 @@ export function AppShell({
 }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [clients, setClients] = useState<{ id: string; name: string }[]>([]);
+
+  useEffect(() => {
+    if (user.role !== "platform_admin") return;
+    fetch("/api/tenants")
+      .then((r) => r.json())
+      .then((d) => setClients(d.tenants ?? []));
+  }, [user.role]);
+
+  async function switchSpace(tenantId: string) {
+    await fetch("/api/workspace", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ tenantId }),
+    });
+    router.refresh();
+  }
 
   async function logout() {
     await fetch("/api/auth/logout", { method: "POST" });
@@ -55,8 +73,24 @@ export function AppShell({
           <div className="text-sm text-white">{user.name}</div>
           <div className="truncate text-xs text-[#B8A99A]">{user.email}</div>
           <div className="mt-2 text-[10px] uppercase tracking-wider text-[#C9A227]">
-            {user.tenantName} · {user.role.replace("_", " ")}
+            {user.workspaceTenantName || user.tenantName}
           </div>
+          <div className="text-[10px] uppercase tracking-wider text-[#B8A99A]">
+            {user.role.replace("_", " ")}
+          </div>
+          {user.role === "platform_admin" && clients.length > 0 && (
+            <select
+              className="field mt-2 py-1 text-xs"
+              value={user.workspaceTenantId || user.tenantId}
+              onChange={(e) => switchSpace(e.target.value)}
+            >
+              {clients.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          )}
           <button
             onClick={logout}
             className="mt-3 w-full rounded-lg border border-white/10 py-1.5 text-xs text-[#D2C4B4] hover:bg-white/5"

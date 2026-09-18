@@ -40,7 +40,10 @@ export async function getSession(): Promise<SessionUser | null> {
   if (!token) return null;
   try {
     const { payload } = await jwtVerify(token, secret);
-    return payload as unknown as SessionUser;
+    const user = payload as unknown as SessionUser;
+    if (!user.workspaceTenantId) user.workspaceTenantId = user.tenantId;
+    if (!user.workspaceTenantName) user.workspaceTenantName = user.tenantName;
+    return user;
   } catch {
     return null;
   }
@@ -50,21 +53,32 @@ export async function findUserByEmail(email: string) {
   return findUserRow(email);
 }
 
-export async function toSessionUser(user: {
-  id: string;
-  email: string;
-  name: string;
-  role: SessionUser["role"];
-  tenantId: string;
-}): Promise<SessionUser> {
-  const tenant = await getTenant(user.tenantId);
+export async function toSessionUser(
+  user: {
+    id: string;
+    email: string;
+    name: string;
+    role: SessionUser["role"];
+    tenantId: string;
+  },
+  workspaceTenantId?: string,
+): Promise<SessionUser> {
+  const home = await getTenant(user.tenantId);
+  const workspace =
+    workspaceTenantId && workspaceTenantId !== user.tenantId
+      ? await getTenant(workspaceTenantId)
+      : home;
+  const tenantName = home?.name ?? "Protocollo Gare";
+  const space = workspace ?? home;
   return {
     id: user.id,
     email: user.email,
     name: user.name,
     role: user.role,
     tenantId: user.tenantId,
-    tenantName: tenant?.name ?? "Protocollo Gare",
+    tenantName,
+    workspaceTenantId: space?.id ?? user.tenantId,
+    workspaceTenantName: space?.name ?? tenantName,
   };
 }
 

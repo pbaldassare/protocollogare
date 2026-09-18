@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { canSeeAllTenants, getSession } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import {
   getPractice,
   listDocuments,
@@ -8,9 +8,10 @@ import {
   listVersionsForPractice,
   updatePractice,
 } from "@/lib/store";
+import { inWorkspace } from "@/lib/workspace";
 
-function visible(tenantId: string, session: { tenantId: string; role: string }) {
-  return canSeeAllTenants(session.role as "platform_admin") || tenantId === session.tenantId;
+function visible(tenantId: string, session: Parameters<typeof inWorkspace>[0]) {
+  return inWorkspace(session, tenantId);
 }
 
 export async function GET(_: Request, ctx: { params: Promise<{ id: string }> }) {

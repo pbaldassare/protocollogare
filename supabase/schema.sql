@@ -98,7 +98,32 @@ alter table public.prompts enable row level security;
 alter table public.practices enable row level security;
 alter table public.documents enable row level security;
 alter table public.outputs enable row level security;
+create table if not exists public.knowledge_documents (
+  id uuid primary key default gen_random_uuid(),
+  tenant_id uuid not null references public.tenants(id) on delete cascade,
+  title text not null,
+  kind text not null default 'altro',
+  filename text not null,
+  mime_type text not null default 'application/octet-stream',
+  extracted_text text not null default '',
+  file_bytes bytea,
+  size integer not null default 0,
+  created_at timestamptz not null default now()
+);
+create index if not exists knowledge_documents_tenant_id_idx on public.knowledge_documents (tenant_id);
+
+create table if not exists public.ai_memories (
+  id uuid primary key default gen_random_uuid(),
+  tenant_id uuid not null references public.tenants(id) on delete cascade,
+  kind text not null default 'fact' check (kind in ('fact', 'style', 'correction')),
+  content text not null,
+  created_at timestamptz not null default now()
+);
+create index if not exists ai_memories_tenant_id_idx on public.ai_memories (tenant_id);
+
 alter table public.output_versions enable row level security;
+alter table public.knowledge_documents enable row level security;
+alter table public.ai_memories enable row level security;
 
 revoke all on all tables in schema public from anon, authenticated;
 revoke all on all sequences in schema public from anon, authenticated;

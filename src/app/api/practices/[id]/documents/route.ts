@@ -2,15 +2,16 @@ import { mkdtempSync, writeFileSync, rmSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
 import { NextResponse } from "next/server";
-import { canSeeAllTenants, getSession } from "@/lib/auth";
+import { getSession } from "@/lib/auth";
 import { extractTextFromFile } from "@/lib/extract";
 import { deleteDocument, getPractice, insertDocument } from "@/lib/store";
 import type { DocumentKind } from "@/lib/types";
+import { inWorkspace } from "@/lib/workspace";
 
 export const runtime = "nodejs";
 
-function visible(tenantId: string, session: { tenantId: string; role: string }) {
-  return canSeeAllTenants(session.role as "platform_admin") || tenantId === session.tenantId;
+function visible(tenantId: string, session: Parameters<typeof inWorkspace>[0]) {
+  return inWorkspace(session, tenantId);
 }
 
 export async function POST(req: Request, ctx: { params: Promise<{ id: string }> }) {

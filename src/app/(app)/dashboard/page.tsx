@@ -11,12 +11,14 @@ export default async function DashboardPage() {
     <div className="mx-auto max-w-6xl">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-[#C9A227]">Workspace</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-[#C9A227]">
+            {session.workspaceTenantName || session.tenantName}
+          </p>
           <h1 className="mt-1 font-[family-name:var(--font-display)] text-4xl text-white">
             Pratiche di gara
           </h1>
           <p className="mt-2 max-w-xl text-sm text-[#D2C4B4]">
-            Carica gli atti, istruisci il formato dell’IA e genera l’Output. Dati su Supabase, isolati per tenant.
+            Solo il bagaglio di questo cliente: atti, libreria e IA. Gli altri spazi restano chiusi.
           </p>
         </div>
         <Link href="/practices/new" className="gold-btn rounded-xl px-5 py-2.5 text-sm">

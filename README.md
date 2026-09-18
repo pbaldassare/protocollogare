@@ -26,7 +26,7 @@ Apri [http://localhost:3000](http://localhost:3000), accedi e apri la pratica **
 ## Cosa fa
 
 1. **Login** con sessione cookie httpOnly
-2. **Multi-tenant**: pratiche, file, prompt e output isolati
+2. **Spazi cliente**: ogni cliente ha pratiche, libreria, persone, prompt e memoria IA isolati. L’Output usa solo il bagaglio di quello spazio.
 3. **Upload** PDF/DOCX con estrazione testo (OCR segnalato se il PDF è scansionato)
 4. **Istruzioni IA**: Prompt Master + sezioni di formato modificabili
 5. **Genera Output** e **Salva** versioni (bozza / definitivo)
