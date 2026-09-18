@@ -6,12 +6,12 @@ import { usePathname, useRouter } from "next/navigation";
 import type { SessionUser } from "@/lib/types";
 import { Logo } from "./Logo";
 
-const NAV = [
-  { href: "/dashboard", label: "Dashboard" },
+const CLIENT_NAV = [
+  { href: "/dashboard", label: "Pratiche" },
   { href: "/practices/new", label: "Nuova pratica" },
+  { href: "/documents", label: "Documenti" },
   { href: "/prompts", label: "Istruzioni IA" },
-  { href: "/archive", label: "Archivio" },
-  { href: "/settings", label: "Impostazioni" },
+  { href: "/settings", label: "Spazio" },
 ];
 
 export function AppShell({
@@ -52,7 +52,19 @@ export function AppShell({
       <aside className="fixed inset-y-0 left-0 z-20 hidden w-64 flex-col border-r border-white/8 bg-[#3F3832]/90 px-5 py-6 backdrop-blur-xl md:flex">
         <Logo />
         <nav className="mt-10 flex flex-1 flex-col gap-1">
-          {NAV.map((item) => {
+          {user.role === "platform_admin" && (
+            <Link
+              href="/clients"
+              className={`rounded-xl px-3 py-2.5 text-sm transition ${
+                pathname === "/clients" || pathname.startsWith("/clients/")
+                  ? "bg-[#C9A227]/15 text-[#F3E6C0]"
+                  : "text-[#D2C4B4] hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              Clienti
+            </Link>
+          )}
+          {CLIENT_NAV.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <Link

@@ -19,6 +19,7 @@ import type {
   MemoryKind,
 } from "./types";
 import { query, queryOne } from "./db";
+import { libraryFolder, practiceFolder, writeClientFile } from "./folders";
 import { DEFAULT_SECTIONS } from "./seed";
 import { workspaceId } from "./workspace";
 
@@ -379,10 +380,16 @@ export async function insertDocument(input: {
   extractedText: string;
   fileBytes: Buffer;
 }) {
+  const tenant = await getTenant(input.tenantId);
+  const storagePath = writeClientFile(
+    practiceFolder(tenant?.slug || input.tenantId, input.practiceId),
+    input.filename,
+    input.fileBytes,
+  );
   const row = await queryOne<DocumentRow>(
     `insert into documents
       (tenant_id, practice_id, kind, filename, mime_type, storage_path, extracted_text, file_bytes, size)
-     values ($1,$2,$3,$4,$5,'supabase',$6,$7,$8)
+     values ($1,$2,$3,$4,$5,$6,$7,$8,$9)
      returning id, tenant_id, practice_id, kind, filename, mime_type, storage_path, extracted_text, size, created_at`,
     [
       input.tenantId,
@@ -390,6 +397,7 @@ export async function insertDocument(input: {
       input.kind,
       input.filename,
       input.mimeType,
+      storagePath,
       input.extractedText,
       input.fileBytes,
       input.fileBytes.length,
@@ -694,6 +702,8 @@ export async function insertKnowledge(input: {
   extractedText: string;
   fileBytes: Buffer;
 }) {
+  const tenant = await getTenant(input.tenantId);
+  writeClientFile(libraryFolder(tenant?.slug || input.tenantId), input.filename, input.fileBytes);
   const row = await queryOne<KnowledgeRow>(
     `insert into knowledge_documents
       (tenant_id, title, kind, filename, mime_type, extracted_text, file_bytes, size)
@@ -711,6 +721,83 @@ export async function insertKnowledge(input: {
     ],
   );
   return row ? mapKnowledge(row) : null;
+}
+
+export async function listClientDirectory(session: SessionUser) {
+  if (!canSeeAll(session.role)) {
+    const own = await listTenants(session);
+    return own.map((t) => ({ ...t, practices: 0, documents: 0, users: 0, prompts: 0 }));
+  }
+  const rows = await query<{
+    id: string;
+    name: string;
+    slug: string;
+    created_at: Date;
+    practices: string;
+    documents: string;
+    users: string;
+    prompts: string;
+  }>(
+    `select t.id, t.name, t.slug, t.created_at,
+            (select count(*) from practices p where p.tenant_id = t.id)::text as practices,
+            (select count(*) from documents d where d.tenant_id = t.id)::text as documents,
+            (select count(*) from users u where u.tenant_id = t.id)::text as users,
+            (select count(*) from prompts pr where pr.tenant_id = t.id)::text as prompts
+       from tenants t
+      order by t.name`,
+  );
+  return rows.map((r) => ({
+    ...mapTenant(r),
+    practices: Number(r.practices),
+    documents: Number(r.documents),
+    users: Number(r.users),
+    prompts: Number(r.prompts),
+  }));
+}
+
+export async function listDocumentTree(session: SessionUser) {
+  const tenant = workspaceId(session);
+  const space = await getTenant(tenant);
+  const practices = await query<PracticeRow>(
+    "select * from practices where tenant_id = $1 order by updated_at desc",
+    [tenant],
+  );
+  const folders = [];
+  for (const p of practices) {
+    const docs = await listDocuments(p.id);
+    const outs = await listOutputs(p.id);
+    folders.push({
+      id: p.id,
+      title: p.title,
+      ente: p.ente,
+      cig: p.cig,
+      status: p.status,
+      path: `${space?.slug || "cliente"}/pratiche/${p.id}`,
+      documents: docs.map((d) => ({
+        id: d.id,
+        filename: d.filename,
+        kind: d.kind,
+        size: d.size,
+        createdAt: d.createdAt,
+        storagePath: d.storagePath,
+      })),
+      outputs: outs.map((o) => ({
+        id: o.id,
+        title: o.title,
+        status: o.status,
+        updatedAt: o.updatedAt,
+      })),
+    });
+  }
+  const library = await listKnowledge(tenant);
+  return {
+    client: space,
+    library: {
+      path: `${space?.slug || "cliente"}/libreria`,
+      documents: library,
+    },
+    folders,
+  };
 }
 
 export async function deleteKnowledge(tenantId: string, id: string) {

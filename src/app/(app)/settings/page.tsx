@@ -1,27 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
-type Tenant = { id: string; name: string; slug: string };
 type Person = { id: string; email: string; name: string; role: string };
 type LibDoc = { id: string; title: string; kind: string; filename: string; size: number };
 type Memory = { id: string; kind: string; content: string };
 
 export default function SettingsPage() {
-  const router = useRouter();
-  const [tenants, setTenants] = useState<Tenant[]>([]);
   const [users, setUsers] = useState<Person[]>([]);
   const [library, setLibrary] = useState<LibDoc[]>([]);
   const [memories, setMemories] = useState<Memory[]>([]);
   const [me, setMe] = useState<{ role: string; workspaceTenantId?: string } | null>(null);
   const [error, setError] = useState("");
-  const [info, setInfo] = useState("");
-
-  const [clientName, setClientName] = useState("");
-  const [adminName, setAdminName] = useState("");
-  const [adminEmail, setAdminEmail] = useState("");
-  const [adminPassword, setAdminPassword] = useState("");
 
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -32,14 +22,12 @@ export default function SettingsPage() {
   const [memoryText, setMemoryText] = useState("");
 
   async function load() {
-    const [t, u, l, m, meRes] = await Promise.all([
-      fetch("/api/tenants").then((r) => r.json()),
+    const [u, l, m, meRes] = await Promise.all([
       fetch("/api/users").then((r) => r.json()),
       fetch("/api/library").then((r) => r.json()),
       fetch("/api/memories").then((r) => r.json()),
       fetch("/api/auth/me").then((r) => r.json()),
     ]);
-    setTenants(t.tenants ?? []);
     setUsers(u.users ?? []);
     setLibrary(l.documents ?? []);
     setMemories(m.memories ?? []);
@@ -49,44 +37,6 @@ export default function SettingsPage() {
   useEffect(() => {
     load();
   }, []);
-
-  async function createClient(e: React.FormEvent) {
-    e.preventDefault();
-    setError("");
-    setInfo("");
-    const res = await fetch("/api/tenants", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        name: clientName,
-        adminName,
-        adminEmail,
-        adminPassword,
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      setError(data.error || "Operazione non consentita");
-      return;
-    }
-    setClientName("");
-    setAdminName("");
-    setAdminEmail("");
-    setAdminPassword("");
-    setInfo(`Cliente “${data.tenant?.name}” creato con spazio e IA propri.`);
-    await load();
-  }
-
-  async function enterSpace(tenantId: string) {
-    const res = await fetch("/api/workspace", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ tenantId }),
-    });
-    if (!res.ok) return;
-    router.refresh();
-    await load();
-  }
 
   async function addUser(e: React.FormEvent) {
     e.preventDefault();
@@ -148,74 +98,22 @@ export default function SettingsPage() {
   return (
     <div className="mx-auto max-w-3xl space-y-8">
       <div>
-        <p className="text-xs uppercase tracking-[0.2em] text-[#C9A227]">Impostazioni</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-[#C9A227]">Spazio</p>
         <h1 className="mt-1 font-[family-name:var(--font-display)] text-4xl text-white">
-          Spazi cliente
+          Gestione di questo cliente
         </h1>
         <p className="mt-2 text-sm text-[#D2C4B4]">
-          Ogni cliente ha il suo bagaglio: persone, pratiche, documenti, prompt e memoria IA.
-          I dati non si mescolano.
+          Persone, libreria e memoria IA valgono solo per lo spazio in cui sei entrato.
+          Le istruzioni IA si modificano dalla pagina dedicata di questo cliente.
         </p>
+        {platform && (
+          <a href="/clients" className="mt-4 inline-block text-sm text-[#F3E6C0] hover:underline">
+            Vai all’elenco clienti
+          </a>
+        )}
       </div>
 
       {error && <p className="text-sm text-red-200">{error}</p>}
-      {info && <p className="text-sm text-[#9EE6E2]">{info}</p>}
-
-      <div className="card p-5">
-        <h2 className="text-sm uppercase tracking-wider text-[#C9A227]">Clienti</h2>
-        <ul className="mt-4 space-y-2">
-          {tenants.map((t) => (
-            <li key={t.id} className="flex items-center justify-between gap-3 rounded-xl bg-black/20 px-3 py-2">
-              <div>
-                <span className="text-white">{t.name}</span>
-                <span className="ml-2 text-xs text-[#B8A99A]">{t.slug}</span>
-              </div>
-              {platform && (
-                <button
-                  onClick={() => enterSpace(t.id)}
-                  className="text-xs text-[#F3E6C0] hover:underline"
-                >
-                  {me?.workspaceTenantId === t.id ? "Spazio attivo" : "Entra"}
-                </button>
-              )}
-            </li>
-          ))}
-        </ul>
-        {platform && (
-          <form onSubmit={createClient} className="mt-5 grid gap-2 sm:grid-cols-2">
-            <input
-              className="field sm:col-span-2"
-              value={clientName}
-              onChange={(e) => setClientName(e.target.value)}
-              placeholder="Nome cliente"
-              required
-            />
-            <input
-              className="field"
-              value={adminName}
-              onChange={(e) => setAdminName(e.target.value)}
-              placeholder="Admin — nome"
-            />
-            <input
-              className="field"
-              type="email"
-              value={adminEmail}
-              onChange={(e) => setAdminEmail(e.target.value)}
-              placeholder="Admin — email"
-            />
-            <input
-              className="field sm:col-span-2"
-              type="password"
-              value={adminPassword}
-              onChange={(e) => setAdminPassword(e.target.value)}
-              placeholder="Admin — password (min. 8)"
-            />
-            <button className="gold-btn rounded-xl px-4 py-2 sm:col-span-2">
-              Crea spazio cliente
-            </button>
-          </form>
-        )}
-      </div>
 
       <div className="card p-5">
         <h2 className="text-sm uppercase tracking-wider text-[#C9A227]">Persone di questo spazio</h2>
