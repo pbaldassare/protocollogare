@@ -4,7 +4,8 @@ Piattaforma multi-tenant per caricare atti di gara (PDF/DOCX), istruire l’IA s
 
 ## Accesso admin
 
-- Email: `paolo.baldassare@gmail.com`
+- Piattaforma: `paolo.baldassare@gmail.com`
+- Consulbrokers (Ufficio Bari): `ufficiobari@consulbrokers.it`
 - Password: quella fornita in sede di setup (hash salvato nel seed, non in chiaro)
 
 ## Cloudflare Pages
