@@ -11,6 +11,7 @@ if (!url) {
 const TENANT_PGARE = "a1111111-1111-4111-8111-111111111111";
 const TENANT_CONSULBROKERS = "a2222222-2222-4222-8222-222222222222";
 const USER_ADMIN = "b1111111-1111-4111-8111-111111111111";
+const USER_UFFICIO_BARI = "b2222222-2222-4222-8222-222222222222";
 const PROMPT_MASTER = "c1111111-1111-4111-8111-111111111111";
 const PRACTICE_ARPAL = "d1111111-1111-4111-8111-111111111111";
 const ADMIN_HASH =
@@ -43,6 +44,13 @@ await client.query(
    values ($1,$2,$3,'platform_admin',$4,$5)
    on conflict (email) do update set password_hash = excluded.password_hash, name = excluded.name, role = excluded.role`,
   [USER_ADMIN, "paolo.baldassare@gmail.com", "Paolo Baldassare", TENANT_PGARE, ADMIN_HASH],
+);
+
+await client.query(
+  `insert into users (id, email, name, role, tenant_id, password_hash)
+   values ($1,$2,$3,'admin',$4,$5)
+   on conflict (email) do update set password_hash = excluded.password_hash, name = excluded.name, role = excluded.role, tenant_id = excluded.tenant_id`,
+  [USER_UFFICIO_BARI, "ufficiobari@consulbrokers.it", "Ufficio Bari", TENANT_CONSULBROKERS, ADMIN_HASH],
 );
 
 await client.query(
