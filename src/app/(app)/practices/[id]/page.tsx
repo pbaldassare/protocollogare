@@ -118,7 +118,7 @@ export default function PracticePage() {
   }
 
   if (!practice) {
-    return <div className="text-[#9BB0C3]">{error || "Caricamento…"}</div>;
+    return <div className="text-[#D2C4B4]">{error || "Caricamento…"}</div>;
   }
 
   const output = outputs[0];
@@ -131,7 +131,7 @@ export default function PracticePage() {
           <h1 className="mt-1 font-[family-name:var(--font-display)] text-3xl text-white md:text-4xl">
             {practice.title}
           </h1>
-          <p className="mt-2 text-sm text-[#9BB0C3]">
+          <p className="mt-2 text-sm text-[#D2C4B4]">
             {practice.ente} · {practice.cig}
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function PracticePage() {
                 ))}
               </select>
             </div>
-            <label className="mt-3 block cursor-pointer rounded-xl border border-dashed border-white/20 px-3 py-6 text-center text-sm text-[#9BB0C3] hover:border-[#C9A227]/50">
+            <label className="mt-3 block cursor-pointer rounded-xl border border-dashed border-white/20 px-3 py-6 text-center text-sm text-[#D2C4B4] hover:border-[#C9A227]/50">
               {busy === "upload" ? "Caricamento…" : "Trascina o scegli PDF / DOCX"}
               <input
                 type="file"
@@ -194,7 +194,7 @@ export default function PracticePage() {
                     <span className="text-sm text-white">{d.filename}</span>
                     <span className="text-[10px] uppercase text-[#C9A227]">{d.kind}</span>
                   </div>
-                  <p className="mt-1 line-clamp-2 text-xs text-[#8BA3B8]">
+                  <p className="mt-1 line-clamp-2 text-xs text-[#B8A99A]">
                     {d.extractedText.slice(0, 160) || "Nessun testo"}
                   </p>
                 </li>
@@ -223,7 +223,7 @@ export default function PracticePage() {
                 </option>
               ))}
             </select>
-            <p className="mt-2 text-xs text-[#8BA3B8]">
+            <p className="mt-2 text-xs text-[#B8A99A]">
               Cambia prompt o sezioni in Istruzioni IA per variare il formato dell’Output.
             </p>
             <textarea

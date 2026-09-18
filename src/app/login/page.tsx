@@ -34,18 +34,18 @@ export default function LoginPage() {
     <div className="relative flex min-h-screen items-center justify-center px-4">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-[-10%] top-[-20%] h-[420px] w-[420px] rounded-full bg-[#C9A227]/10 blur-3xl" />
-        <div className="absolute bottom-[-10%] right-[-5%] h-[380px] w-[380px] rounded-full bg-[#1AA6A0]/10 blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[-5%] h-[380px] w-[380px] rounded-full bg-[#C4B098]/16 blur-3xl" />
       </div>
-      <div className="relative w-full max-w-md rounded-3xl border border-white/10 bg-[#0B1F33]/80 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+      <div className="relative w-full max-w-md rounded-3xl border border-white/10 bg-[#4A433C]/80 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl">
         <Logo />
         <h1 className="mt-8 font-[family-name:var(--font-display)] text-3xl text-white">
           Accesso sicuro
         </h1>
-        <p className="mt-2 text-sm text-[#9BB0C3]">
+        <p className="mt-2 text-sm text-[#D2C4B4]">
           Area riservata per pratiche, prompt e output di gara.
         </p>
         <form onSubmit={onSubmit} className="mt-8 space-y-4">
-          <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+          <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
             Email
             <input
               className="field mt-1"
@@ -56,7 +56,7 @@ export default function LoginPage() {
               required
             />
           </label>
-          <label className="block text-xs uppercase tracking-wider text-[#8BA3B8]">
+          <label className="block text-xs uppercase tracking-wider text-[#B8A99A]">
             Password
             <input
               className="field mt-1"
@@ -76,7 +76,7 @@ export default function LoginPage() {
             {loading ? "Verifica in corso…" : "Entra"}
           </button>
         </form>
-        <p className="mt-6 text-center text-[11px] text-[#6F8599]">
+        <p className="mt-6 text-center text-[11px] text-[#9A8E82]">
           Protocollo Gare · sessione cifrata · multi-tenant
         </p>
       </div>

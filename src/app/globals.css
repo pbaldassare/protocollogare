@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #071422;
-  --navy-2: #0b1f33;
+  --taupe: #534b44;
+  --taupe-2: #655c54;
   --gold: #c9a227;
   --gold-2: #f3e6c0;
-  --ice: #e8eef4;
+  --ice: #f4eee6;
   --teal: #1aa6a0;
 }
 
@@ -16,10 +16,10 @@ body {
 
 body {
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(201, 162, 39, 0.12), transparent 50%),
-    radial-gradient(900px 500px at 110% 10%, rgba(26, 166, 160, 0.12), transparent 45%),
-    linear-gradient(180deg, #071422 0%, #0a1a2c 55%, #08131f 100%);
-  color: #e8eef4;
+    radial-gradient(1200px 600px at 10% -10%, rgba(201, 162, 39, 0.16), transparent 50%),
+    radial-gradient(900px 500px at 110% 10%, rgba(196, 176, 152, 0.18), transparent 45%),
+    linear-gradient(180deg, #6b625a 0%, #534b44 55%, #453e38 100%);
+  color: #f4eee6;
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
@@ -46,10 +46,10 @@ body {
 .field {
   width: 100%;
   border-radius: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(7, 20, 34, 0.45);
+  border: 1px solid rgba(244, 238, 230, 0.16);
+  background: rgba(48, 43, 38, 0.35);
   padding: 0.7rem 0.9rem;
-  color: #e8eef4;
+  color: #f4eee6;
   outline: none;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(244, 238, 230, 0.12);
+  background: rgba(244, 238, 230, 0.07);
   border-radius: 1.25rem;
 }

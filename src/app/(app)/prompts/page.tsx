@@ -78,7 +78,7 @@ export default function PromptsPage() {
           <h1 className="mt-1 font-[family-name:var(--font-display)] text-4xl text-white">
             Cambia il formato
           </h1>
-          <p className="mt-2 max-w-2xl text-sm text-[#9BB0C3]">
+          <p className="mt-2 max-w-2xl text-sm text-[#D2C4B4]">
             Il Prompt Master definisce come ragiona l’IA. Le sezioni definiscono la struttura dell’Output. Clona e modifica senza toccare il codice.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function PromptsPage() {
                 setSaved("");
               }}
               className={`mb-1 w-full rounded-xl px-3 py-2 text-left text-sm ${
-                current?.id === p.id ? "bg-[#C9A227]/15 text-[#F3E6C0]" : "text-[#9BB0C3]"
+                current?.id === p.id ? "bg-[#C9A227]/15 text-[#F3E6C0]" : "text-[#D2C4B4]"
               }`}
             >
               {p.name}
